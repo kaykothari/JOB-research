@@ -101,23 +101,30 @@
         <div class="control-group">
           <label>Sort By</label>
           <select id="filter-sort">
-            <option value="Salary_Fresher_USD">Fresher Salary</option>
-            <option value="Salary_Max_USD">Max Salary</option>
-            <option value="Salary_10Yr_USD">10yr Salary</option>
-            <option value="AI_Displacement_20Yr_Pct">AI Displacement</option>
+            <option value="default" selected>Default (Database Order: Role &rarr; 3 Countries)</option>
+            <option value="Role_Title">Role Name (Alphabetical: A &rarr; Z)</option>
+            <option value="Personal_Profile_Fit_1_10">Personal Profile Fit</option>
+            <option value="Salary_Fresher_USD">Fresher Starting Pay</option>
+            <option value="Salary_10Yr_USD">10-Yr Benchmark Pay</option>
+            <option value="Salary_Max_USD">Peak Career Ceiling</option>
+            <option value="Acceptance_Ease_1_10">Acceptance Ease</option>
+            <option value="Placements_1_10">Campus Placements</option>
+            <option value="Layoff_Recovery_Ease_1_10">Layoff Recovery Ease</option>
+            <option value="Fresher_Stability_1_10">Fresher Stability</option>
             <option value="Senior_Stability_1_10">Senior Stability</option>
-            <option value="Masters_Cost_USD">Tuition Cost</option>
-            <option value="Remote_Work_1_10">Remote Work</option>
-            <option value="Undergrad_Fit_1_10">Undergrad Fit</option>
+            <option value="PR_Ease_1_10">PR Ease</option>
+            <option value="AI_Resilience_20Yr_Pct">AI Resilience (% Safe)</option>
+            <option value="Remote_Work_1_10">Remote Work Viability</option>
             <option value="Cognitive_Alignment_1_10">Cognitive Alignment</option>
+            <option value="Masters_Cost_USD">Tuition Cost</option>
             <option value="Global_Employers_Count">Employer Count</option>
           </select>
         </div>
         <div class="control-group">
           <label>Order</label>
           <select id="filter-order">
+            <option value="asc" selected>Ascending / Natural</option>
             <option value="desc">Descending</option>
-            <option value="asc">Ascending</option>
           </select>
         </div>
       </div>
@@ -126,27 +133,34 @@
         <table>
           <thead>
             <tr>
-              <th style="min-width:260px">Career Ladder (Entry &rarr; Mid &rarr; Endgame)</th>
-              <th>Country</th>
-              <th style="min-width:180px">Primary &amp; Secondary Skills</th>
-              <th>Degree Required</th>
-              <th>Tuition</th>
-              <th>Fresher</th>
-              <th>5yr</th>
-              <th>10yr</th>
-              <th>20yr</th>
-              <th>Ceiling</th>
-              <th>AI Risk</th>
-              <th>Stability</th>
-              <th>Remote</th>
-              <th>UG Fit</th>
-              <th>Cognitive</th>
-              <th>Employers</th>
+              <th class="th-hoverable" data-col="Role & Career Ladder" style="min-width:260px">Career Ladder (Entry &rarr; Mid &rarr; Endgame)</th>
+              <th class="th-hoverable" data-col="Country">Country</th>
+              <th class="th-hoverable" data-col="Primary & Secondary Skills" style="min-width:180px">Primary &amp; Secondary Skills</th>
+              <th class="th-hoverable" data-col="Degree Required">Degree</th>
+              <th class="th-hoverable" data-col="Tuition">Tuition</th>
+              <th class="th-hoverable" data-col="Acceptance Ease">Acceptance Ease</th>
+              <th class="th-hoverable" data-col="Placements">Placements</th>
+              <th class="th-hoverable" data-col="Fresher Pay">Fresher</th>
+              <th class="th-hoverable" data-col="5yr Pay">5yr</th>
+              <th class="th-hoverable" data-col="10yr Pay">10yr</th>
+              <th class="th-hoverable" data-col="20yr Pay">20yr</th>
+              <th class="th-hoverable" data-col="Ceiling Pay">Ceiling</th>
+              <th class="th-hoverable" data-col="Fresher Stability">Fresher Stability</th>
+              <th class="th-hoverable" data-col="Senior Stability">Senior Stability</th>
+              <th class="th-hoverable" data-col="PR Ease">PR Ease</th>
+              <th class="th-hoverable" data-col="PR Timeline">PR Time</th>
+              <th class="th-hoverable" data-col="AI Resilience">AI Resilience</th>
+              <th class="th-hoverable" data-col="Remote Work">Remote</th>
+              <th class="th-hoverable" data-col="Personal Fit">Personal Fit</th>
+              <th class="th-hoverable" data-col="Cognitive">Cognitive</th>
+              <th class="th-hoverable" data-col="Employers">Employers</th>
+              <th class="th-hoverable" data-col="Layoff Recovery">Layoff Recovery</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
         </table>
       </div>
+      <div id="table-floating-tooltip"></div>
     </div>
 
     <!-- ===== COMPENSATION ===== -->
@@ -177,21 +191,21 @@
     <div class="view" id="view-risk">
       <div class="grid-2 section-gap">
         <div class="panel">
-          <div class="panel-title">AI Displacement vs. Salary Ceiling (USA)</div>
+          <div class="panel-title">AI Resilience vs. Salary Ceiling (USA)</div>
           <div class="chart-wrap"><canvas id="chart-ai-vs-salary"></canvas></div>
         </div>
         <div class="panel">
-          <div class="panel-title">Entry Volatility vs. Senior Stability</div>
+          <div class="panel-title">Fresher Stability vs. Senior Stability</div>
           <div class="chart-wrap"><canvas id="chart-vol-stab"></canvas></div>
         </div>
       </div>
       <div class="grid-2 section-gap">
         <div class="panel">
-          <div class="panel-title">Immigration Pathway Difficulty</div>
+          <div class="panel-title">Immigration Pathway PR Ease &amp; Timeline</div>
           <div class="chart-wrap"><canvas id="chart-pr-diff"></canvas></div>
         </div>
         <div class="panel">
-          <div class="panel-title">Composite Security Index (Low AI Risk + High Stability)</div>
+          <div class="panel-title">Composite Security Index (AI Resilience + Senior/Fresher Stability)</div>
           <div class="chart-wrap"><canvas id="chart-security-score"></canvas></div>
         </div>
       </div>
@@ -241,6 +255,39 @@
 
       <!-- 3-Way Country Comparison Cards -->
       <div class="grid-3 section-gap" id="country-path-cards"></div>
+
+      <!-- Purchasing Power Parity (PPP) & Real Living Value Intelligence Card -->
+      <div class="panel section-gap" style="background: linear-gradient(135deg, #18181b 0%, #111111 100%); border-left: 3px solid #38bdf8;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
+          <div style="font-weight:700;font-size:15px;color:#ffffff;">
+            Purchasing Power Parity (PPP) &amp; Real Living Value: Why $100k USD in the USA &ne; $100k in AUS/NZ or Canada
+          </div>
+          <span class="badge-win" style="background:#0c4a6e;color:#38bdf8;border-color:#0284c7;">Macro Economics Brief</span>
+        </div>
+        <p style="color:#d4d4d4;font-size:12.5px;line-height:1.6;margin-bottom:14px;">
+          Comparing raw dollar figures across countries doesn't tell the whole story. While the US offers the highest raw USD salaries, your real take-home quality of life differs dramatically based on healthcare, working hours, and local living costs:
+        </p>
+        <div class="grid-3" style="gap:14px;">
+          <div style="background:#141414;padding:12px 14px;border-radius:4px;border:1px solid #27272a;">
+            <div style="font-weight:700;color:#ef4444;font-size:12px;margin-bottom:6px;">USA &bull; High Earning, High Out-of-Pocket</div>
+            <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;">
+              High gross pay ($130k+), but private health insurance deductibles cost $6k–$12k/year, housing in tech hubs (SF/NYC) is extreme, and immigration is "at-will" (loss of job = 60 days to leave). Highest potential to rapidly pay off debt and accumulate equity.
+            </div>
+          </div>
+          <div style="background:#141414;padding:12px 14px;border-radius:4px;border:1px solid #27272a;">
+            <div style="font-weight:700;color:#10b981;font-size:12px;margin-bottom:6px;">AUS / NZ &bull; Free Healthcare &amp; +11.5% Super</div>
+            <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;">
+              While 1 AUD &approx; $0.65 USD, universal healthcare (Medicare) is free, companies legally pay +11.5% superannuation (pension) <em>on top</em> of base pay, workweeks are capped at 38 hours, and 4 weeks paid vacation is statutory. High daily buying power.
+            </div>
+          </div>
+          <div style="background:#141414;padding:12px 14px;border-radius:4px;border:1px solid #27272a;">
+            <div style="font-weight:700;color:#3b82f6;font-size:12px;margin-bottom:6px;">Canada &bull; Universal Care &amp; Fast PR Safety</div>
+            <div style="font-size:11.5px;color:#a1a1aa;line-height:1.5;">
+              While 1 CAD &approx; $0.73 USD, provincial healthcare is free and securing PR within 2–3 years eliminates visa panic. Once Canadian citizenship is granted, professionals can use the non-lottery TN visa to work in the US for full US rates.
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Progression & ROI Charts -->
       <div class="grid-2 section-gap">
@@ -295,14 +342,14 @@
               <tr>
                 <th>Rank</th>
                 <th>Role</th>
-                <th>Score</th>
-                <th>Fresher</th>
-                <th>Ceiling</th>
-                <th>AI Risk</th>
+                <th>Fit Score</th>
+                <th>Personal Match</th>
+                <th>Fresher Pay</th>
+                <th>Max Pay</th>
+                <th>AI Safe</th>
+                <th>PR Ease</th>
+                <th>Recovery</th>
                 <th>Stability</th>
-                <th>Remote</th>
-                <th>UG Fit</th>
-                <th>Cognitive</th>
               </tr>
             </thead>
             <tbody id="fit-results"></tbody>
@@ -315,7 +362,7 @@
     <div class="view" id="view-glossary">
       <div class="section-gap">
         <h2 class="section-header">Metric Glossary</h2>
-        <p class="ref-intro">Each career path in the database is evaluated across 25 key attributes. Here is a clear, plain-English explanation of what every metric measures and how to interpret the scores.</p>
+        <p class="ref-intro">Each career path in the database is evaluated across 26 key attributes, fully calibrated for your B.Tech IT + IIT Madras BS Data Science + CSI Leadership background. Here is what every metric measures and how the scales work.</p>
 
         <div class="table-container">
           <table class="ref-table">
@@ -330,27 +377,28 @@
               <tr><td class="cell-role">Role Title (Entry / General)</td><td class="mono">Text</td><td>The base job title you enter at the start of this career track.</td></tr>
               <tr><td class="cell-role">Mid-Career Role</td><td class="mono">Text</td><td>The title you typically hold around year 5–10 (e.g. Staff Engineer, Engineering Manager, Group PM, or BizOps Director).</td></tr>
               <tr><td class="cell-role">Endgame Role</td><td class="mono">Text</td><td>The peak executive destination at the top of the ladder (e.g. CTO, CEO, CPO, CIO, or VP).</td></tr>
-              <tr><td class="cell-role">Primary Skill</td><td class="mono">Badge</td><td>The main daily technical or strategic capability you need to excel (e.g. Coding, Strategy, Machine Learning, Optimization).</td></tr>
-              <tr><td class="cell-role">Secondary Skill</td><td class="mono">Badge</td><td>The critical supporting capability that accelerates promotions into leadership (e.g. Systems Architecture, Financial Modeling, Cross-Functional Leadership).</td></tr>
+              <tr><td class="cell-role">Primary Skill</td><td class="mono">Badge</td><td>The main daily technical or strategic capability you need to excel (e.g. Coding, Real-Time Rendering, Cloud Infrastructure).</td></tr>
+              <tr><td class="cell-role">Secondary Skill</td><td class="mono">Badge</td><td>The critical supporting capability that accelerates promotions into leadership (e.g. Systems Architecture, 3D Math & Shaders, Cross-Functional Leadership).</td></tr>
               <tr><td class="cell-role">Country Path</td><td class="mono">Category</td><td>Where you work and immigrate. "High-Risk: USA" offers highest compensation but tough H-1B/green card rules. "Safe: AUS/NZ" and "Safe: CAN" offer reliable permanent residency pathways.</td></tr>
               <tr><td class="cell-role">Masters Degree</td><td class="mono">Text</td><td>The graduate degree that gives you the highest placement probability and best compensation leverage.</td></tr>
               <tr><td class="cell-role">Masters Cost (USD)</td><td class="mono">Dollar</td><td>Estimated tuition for the master's program in that country (tuition only, excluding living costs).</td></tr>
-              <tr><td class="cell-role">Admission Competitiveness</td><td class="mono">1 &ndash; 10</td><td>How hard it is to get into top master's programs (10 = elite Ivy League/top-5 with sub-5% acceptance; 1 = accessible).</td></tr>
-              <tr><td class="cell-role">Direct Hire Likelihood</td><td class="mono">1 &ndash; 10</td><td>Odds of receiving full-time job offers immediately upon graduation (10 = on-campus recruiting pipelines; 1 = difficult job hunt).</td></tr>
+              <tr><td class="cell-role">Acceptance Ease</td><td class="mono">1 &ndash; 10</td><td>Overall ease of acceptance for a STEM student with your specific profile (B.Tech IT at KJSIT + IIT Madras BS Data Science + CSI COO/Chairperson leadership). 10 = High acceptance probability into top-tier Master's programs without a gap year; 1 = Extremely tough.</td></tr>
+              <tr><td class="cell-role">Campus Placements</td><td class="mono">1 &ndash; 10</td><td>Direct on-campus recruitment pipelines. 10 = Top companies show up on campus to hire graduates directly; 1 = Zero campus hiring (100% blind cold applications).</td></tr>
               <tr><td class="cell-role">Global Employers Count</td><td class="mono">Integer</td><td>Approximate number of companies globally hiring for this role. Higher numbers mean more job mobility and safety against company layoffs.</td></tr>
+              <tr><td class="cell-role">Layoff Recovery Ease</td><td class="mono">1 &ndash; 10</td><td>How easily and quickly you can find another job if laid off. 10 = Abundant open roles / rapid rehire; 1 = Niche, illiquid job market where losing a job causes prolonged unemployment.</td></tr>
               <tr><td class="cell-role">Interview Competitiveness</td><td class="mono">1 &ndash; 10</td><td>Difficulty of landing the job once invited to interview (10 = multi-round LeetCode hard and math tests; 1 = conversational behavioral rounds).</td></tr>
-              <tr><td class="cell-role">Fresher Salary (USD)</td><td class="mono">Dollar</td><td>Expected total compensation in year 1 after completing your master's degree (base pay + bonuses).</td></tr>
+              <tr><td class="cell-role">Fresher Salary (USD)</td><td class="mono">Dollar</td><td>Expected total compensation in year 1 after completing your master's degree (base pay + bonuses/RSUs).</td></tr>
               <tr><td class="cell-role">5-Year Salary (USD)</td><td class="mono">Dollar</td><td>Expected total compensation after 5 years of solid performance and promotions.</td></tr>
               <tr><td class="cell-role">10-Year Salary (USD)</td><td class="mono">Dollar</td><td>Expected total compensation at the 10-year mark (senior IC, engineering manager, or director level).</td></tr>
               <tr><td class="cell-role">20-Year Salary (USD)</td><td class="mono">Dollar</td><td>Expected total compensation around 20 years in (Director, VP, or Principal level).</td></tr>
               <tr><td class="cell-role">Max Salary (USD)</td><td class="mono">Dollar</td><td>Realistic salary ceiling for top performers at the peak of the field (top 5-10% outcomes).</td></tr>
-              <tr><td class="cell-role">Fresher Volatility</td><td class="mono">1 &ndash; 10</td><td>How risky the job market is for juniors (10 = vulnerable to layoffs and hiring freezes during recessions; 1 = steady hiring year-round).</td></tr>
+              <tr><td class="cell-role">Fresher Stability</td><td class="mono">1 &ndash; 10</td><td>Junior hiring resilience during economic recessions. 10 = Steady, reliable hiring for new graduates year-round; 1 = Highly volatile (first to face hiring freezes or revoked offers).</td></tr>
               <tr><td class="cell-role">Senior Stability</td><td class="mono">1 &ndash; 10</td><td>Career durability once you have 10+ years of experience (10 = nearly impossible to displace due to deep domain expertise; 1 = high replacement risk).</td></tr>
-              <tr><td class="cell-role">PR Difficulty</td><td class="mono">1 &ndash; 10</td><td>Difficulty of obtaining permanent residency / green card in that country through this job (10 = high lottery backlogs like US H-1B; 1 = smooth point system).</td></tr>
+              <tr><td class="cell-role">PR Ease</td><td class="mono">1 &ndash; 10</td><td>Ease of obtaining permanent residency / green card in that country. Higher number means more ease. 10 = Smooth, fast points-based or provincial PR (Canada 8/10, Australia 7/10); 1 = Extreme friction / random lottery / decades backlog (USA 2/10).</td></tr>
               <tr><td class="cell-role">PR Timeline (Years)</td><td class="mono">Float</td><td>Average estimated years from your first work day until permanent resident status is granted.</td></tr>
-              <tr><td class="cell-role">AI Displacement (20yr %)</td><td class="mono">Percent</td><td>Projected percentage of routine day-to-day responsibilities that AI could automate over the next 20 years.</td></tr>
+              <tr><td class="cell-role">AI Resilience (20yr %)</td><td class="mono">Percent</td><td>Projected percentage of the role that is SAFE from artificial intelligence automation over the next 20 years. Higher percentage means safer from AI.</td></tr>
               <tr><td class="cell-role">Remote Work</td><td class="mono">1 &ndash; 10</td><td>Feasibility of doing this job fully remote (10 = completely asynchronous & digital; 1 = physical presence in labs, trading desks, or factories mandatory).</td></tr>
-              <tr><td class="cell-role">Undergrad Fit</td><td class="mono">1 &ndash; 10</td><td>How well a standard undergraduate computer science or engineering degree prepares you without needing drastic pivots.</td></tr>
+              <tr><td class="cell-role">Personal Profile Fit</td><td class="mono">1 &ndash; 10</td><td>Direct alignment with your specific technical strengths (Blender, Substance Painter, Unreal Blueprints, Minecraft Redstone discrete logic, 3D vectors & spatial math, fest & sports logistics) vs. dislikes (continuous math, Fourier/Laplace transforms, abstract matrices). 10 = Maximum natural alignment.</td></tr>
               <tr><td class="cell-role">Cognitive Alignment</td><td class="mono">1 &ndash; 10</td><td>How much the job rewards logical systems thinking and technical problem solving vs. social networking or memorization.</td></tr>
             </tbody>
           </table>
@@ -720,77 +768,77 @@
 // ============================================================
 // DATA
 // ============================================================
-const RAW_CSV = `Role_Title,Country_Path,Masters_Degree,Masters_Cost_USD,Admission_Comp_1_10,Direct_Hire_1_10,Global_Employers_Count,Interview_Comp_1_10,Salary_Fresher_USD,Salary_5Yr_USD,Salary_10Yr_USD,Salary_20Yr_USD,Salary_Max_USD,Fresher_Volatility_1_10,Senior_Stability_1_10,PR_Difficulty_1_10,PR_Timeline_Years,AI_Displacement_20Yr_Pct,Remote_Work_1_10,Undergrad_Fit_1_10,Cognitive_Alignment_1_10,Primary_Skill,Secondary_Skill,Mid_Career_Role,Endgame_Role
-Software Engineer,High-Risk: USA,MS Computer Science,68000,7,9,180000,7,125000,180000,260000,360000,600000,4,9,9,8.5,35,9,10,8,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
-Software Engineer,Safe: AUS/NZ,MS Computer Science,48000,6,8,42000,6,92000,135000,185000,240000,340000,3,9,4,3.5,35,8,10,8,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
-Software Engineer,Safe: CAN,MS Computer Science,36000,6,8,55000,6,85000,122000,165000,215000,300000,3,9,3,2.5,35,8,10,8,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
-Cloud & DevOps Engineer,High-Risk: USA,MS CompSci / Cloud Systems,66000,7,9,85000,7,130000,185000,260000,350000,520000,3,9,9,8.5,25,9,10,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
-Cloud & DevOps Engineer,Safe: AUS/NZ,MS CompSci / Cloud Systems,48000,6,8,20000,6,95000,138000,188000,245000,330000,2,9,4,3.5,25,8,10,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
-Cloud & DevOps Engineer,Safe: CAN,MS CompSci / Cloud Systems,35000,6,8,28000,6,88000,125000,165000,215000,285000,2,9,3,2.5,25,8,10,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
-Data & ML Engineer,High-Risk: USA,MS Artificial Intelligence / CS,75000,9,8,95000,9,140000,215000,310000,430000,650000,5,8,9,8.5,28,8,9,5,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
-Data & ML Engineer,Safe: AUS/NZ,MS Artificial Intelligence / CS,54000,8,7,22000,8,102000,152000,220000,295000,420000,4,8,4,3.5,28,7,9,5,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
-Data & ML Engineer,Safe: CAN,MS Artificial Intelligence / CS,42000,8,7,28000,8,94000,138000,195000,260000,360000,4,8,3,2.5,28,7,9,5,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
-Systems & Embedded Engineer,High-Risk: USA,MS Electrical & Comp Eng,68000,7,8,45000,8,122000,175000,245000,330000,460000,3,9,9,8.5,16,4,8,9,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
-Systems & Embedded Engineer,Safe: AUS/NZ,MS Electrical & Comp Eng,50000,6,7,9000,7,92000,130000,175000,235000,310000,2,9,4,3.5,16,3,8,9,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
-Systems & Embedded Engineer,Safe: CAN,MS Electrical & Comp Eng,38000,6,7,12000,7,84000,118000,158000,205000,270000,2,9,3,2.5,16,3,8,9,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
-3D & Graphics Engineer,High-Risk: USA,MS CompSci (Graphics),72000,8,8,6500,8,125000,180000,250000,330000,460000,6,8,9,8.5,24,7,8,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
-3D & Graphics Engineer,Safe: AUS/NZ,MS CompSci (Graphics),50000,6,7,1800,7,88000,124000,160000,200000,270000,4,8,4,3.5,24,6,8,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
-3D & Graphics Engineer,Safe: CAN,MS CompSci (Graphics),42000,6,7,2400,7,80000,112000,145000,180000,235000,4,8,3,2.5,24,6,8,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
-Robotics Engineer,High-Risk: USA,MS Robotics Eng,80000,9,7,6500,8,124000,180000,255000,340000,480000,4,9,9,8.0,17,3,8,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
-Robotics Engineer,Safe: AUS/NZ,MS Robotics Eng,54000,7,6,1500,7,88000,125000,160000,205000,270000,3,9,4,3.5,17,3,8,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
-Robotics Engineer,Safe: CAN,MS Robotics Eng,44000,7,6,2000,7,80000,114000,145000,185000,240000,3,9,3,2.5,17,3,8,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
-Digital Twin & Simulation Engineer,High-Risk: USA,MS Systems / Industrial Eng,68000,7,8,8200,7,118000,172000,245000,320000,420000,4,8,9,8.5,20,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
-Digital Twin & Simulation Engineer,Safe: AUS/NZ,MS Systems / Industrial Eng,48000,5,7,2200,6,86000,120000,155000,180000,240000,3,8,4,3.5,20,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
-Digital Twin & Simulation Engineer,Safe: CAN,MS Systems / Industrial Eng,39000,5,7,3200,6,78000,108000,138000,165000,210000,3,8,3,2.5,20,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
-Spatial Computing Engineer,High-Risk: USA,MS HCI / Spatial Tech,74000,7,6,3500,7,118000,170000,240000,320000,420000,7,6,9,9.0,35,7,8,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
-Spatial Computing Engineer,Safe: AUS/NZ,MS HCI / Spatial Tech,48000,5,5,800,6,85000,122000,155000,185000,230000,6,6,4,3.5,35,6,8,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
-Spatial Computing Engineer,Safe: CAN,MS HCI / Spatial Tech,42000,5,5,1100,6,78000,112000,140000,168000,205000,6,6,3,2.5,35,6,8,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
-Quantitative Researcher,High-Risk: USA,MS Financial Eng / Math,85000,10,6,3500,10,175000,340000,580000,950000,2800000,7,5,9,8.5,42,4,4,2,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
-Quantitative Researcher,Safe: AUS/NZ,MS Financial Eng / Math,60000,8,5,500,9,110000,180000,280000,450000,800000,7,5,5,4.0,42,4,4,2,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
-Quantitative Researcher,Safe: CAN,MS Financial Eng / Math,45000,8,5,650,9,95000,160000,240000,380000,600000,7,5,3,2.5,42,4,4,2,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
-Quantitative Trader,High-Risk: USA,MS Applied Math / MFE,85000,9,5,2500,10,165000,310000,520000,850000,2500000,8,4,9,8.5,55,2,3,1,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
-Quantitative Trader,Safe: AUS/NZ,MS Applied Math / MFE,60000,8,5,400,9,105000,170000,260000,400000,700000,8,4,5,4.0,55,2,3,1,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
-Quantitative Trader,Safe: CAN,MS Applied Math / MFE,45000,8,5,500,9,92000,155000,220000,340000,550000,8,4,3,2.5,55,2,3,1,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
-Quantitative Systems Developer,High-Risk: USA,MS CompSci (Systems),75000,9,7,4500,9,160000,250000,380000,540000,950000,5,8,9,8.5,18,4,8,7,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
-Quantitative Systems Developer,Safe: AUS/NZ,MS CompSci (Systems),52000,7,6,800,8,108000,170000,235000,310000,440000,4,8,4,3.5,18,4,8,7,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
-Quantitative Systems Developer,Safe: CAN,MS CompSci (Systems),40000,7,6,1100,8,98000,150000,205000,270000,380000,4,8,3,2.5,18,4,8,7,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
-Quantitative Risk Analyst,High-Risk: USA,MS Fin Math / Data Sci,70000,8,7,6500,8,122000,180000,260000,350000,500000,5,7,9,8.5,50,5,6,3,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
-Quantitative Risk Analyst,Safe: AUS/NZ,MS Fin Math / Data Sci,52000,7,6,1500,7,90000,135000,185000,240000,320000,5,7,4,3.5,50,5,6,3,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
-Quantitative Risk Analyst,Safe: CAN,MS Fin Math / Data Sci,38000,7,6,1900,7,82000,120000,165000,210000,280000,5,7,3,2.5,50,5,6,3,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
-Web3 & Mechanism Designer,High-Risk: USA,MS CompSci / Game Theory,65000,7,7,1800,8,130000,190000,280000,400000,800000,8,5,9,8.5,25,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
-Web3 & Mechanism Designer,Safe: AUS/NZ,MS CompSci / Game Theory,48000,6,6,300,7,95000,140000,190000,260000,450000,8,5,5,4.0,25,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
-Web3 & Mechanism Designer,Safe: CAN,MS CompSci / Game Theory,36000,6,6,450,7,88000,125000,175000,240000,380000,8,5,3,2.5,25,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
-Product Analyst / Associate PM,High-Risk: USA,MS Tech Management / MBA,80000,8,7,32000,8,120000,180000,265000,380000,750000,5,8,9,8.5,30,8,7,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
-Product Analyst / Associate PM,Safe: AUS/NZ,MS Tech Management / MBA,58000,7,6,7500,7,92000,135000,185000,250000,420000,4,8,4,3.5,30,7,7,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
-Product Analyst / Associate PM,Safe: CAN,MS Tech Management / MBA,44000,7,6,9800,7,84000,122000,165000,220000,350000,4,8,3,2.5,30,7,7,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
-Business & Strategy Analyst,High-Risk: USA,MBA (Strategy/Finance),100000,9,5,22000,9,135000,200000,300000,450000,850000,6,7,9,8.5,45,7,5,4,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
-Business & Strategy Analyst,Safe: AUS/NZ,MBA (Strategy/Finance),70000,7,5,5200,8,100000,148000,210000,290000,450000,5,7,5,4.0,45,6,5,4,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
-Business & Strategy Analyst,Safe: CAN,MBA (Strategy/Finance),52000,7,5,6500,8,92000,135000,185000,250000,380000,5,7,3,2.5,45,6,5,4,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
-Management & Tech Consultant,High-Risk: USA,MBA / MS Tech Management,95000,9,6,28000,8,138000,205000,310000,480000,900000,6,6,9,8.5,38,7,5,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
-Management & Tech Consultant,Safe: AUS/NZ,MBA / MS Tech Management,65000,7,6,6500,7,100000,150000,215000,320000,500000,5,6,5,4.0,38,6,5,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
-Management & Tech Consultant,Safe: CAN,MBA / MS Tech Management,48000,7,6,8200,7,92000,138000,192000,280000,420000,5,6,3,2.5,38,6,5,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
-Technical Program Manager (TPM),High-Risk: USA,MS Eng Management / CompSci,72000,8,8,25000,8,135000,190000,270000,360000,550000,4,9,9,8.5,30,8,9,8,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
-Technical Program Manager (TPM),Safe: AUS/NZ,MS Eng Management / CompSci,54000,6,7,5500,7,105000,145000,195000,250000,360000,3,9,4,3.5,30,7,9,8,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
-Technical Program Manager (TPM),Safe: CAN,MS Eng Management / CompSci,40000,6,7,7200,7,95000,130000,175000,220000,310000,3,9,3,2.5,30,7,9,8,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
-Pricing & Revenue Analyst,High-Risk: USA,MS Econ / Applied Analytics,68000,7,6,11000,7,112000,165000,235000,320000,480000,5,8,9,8.5,50,8,6,6,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
-Pricing & Revenue Analyst,Safe: AUS/NZ,MS Econ / Applied Analytics,52000,6,5,2500,6,86000,122000,168000,220000,310000,4,8,4,3.5,50,7,6,6,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
-Pricing & Revenue Analyst,Safe: CAN,MS Econ / Applied Analytics,38000,6,5,3200,6,78000,112000,152000,198000,270000,4,8,3,2.5,50,7,6,6,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
-Operations Research Analyst,High-Risk: USA,MS Operations Research,68000,8,7,12000,8,115000,165000,235000,320000,440000,4,8,9,8.5,30,6,8,7,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
-Operations Research Analyst,Safe: AUS/NZ,MS Operations Research,54000,6,6,2800,7,88000,124000,160000,200000,260000,4,8,5,3.5,30,5,8,7,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
-Operations Research Analyst,Safe: CAN,MS Operations Research,40000,6,6,3500,7,80000,112000,145000,180000,230000,4,7,3,2.5,30,5,8,7,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
-Smart Infrastructure Modeler,High-Risk: USA,MS Energy / Urban Systems,64000,7,7,6500,7,105000,148000,200000,270000,360000,3,9,9,8.5,24,5,8,6,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
-Smart Infrastructure Modeler,Safe: AUS/NZ,MS Energy / Urban Systems,52000,6,6,1800,6,84000,116000,146000,182000,230000,2,9,4,3.5,24,4,8,6,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
-Smart Infrastructure Modeler,Safe: CAN,MS Energy / Urban Systems,38000,6,6,2200,6,76000,106000,136000,166000,210000,3,9,3,2.5,24,4,8,6,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
-Developer Relations Advocate,High-Risk: USA,MS CompSci / HCI,68000,7,7,5500,7,125000,175000,240000,320000,460000,6,7,9,8.5,42,9,8,7,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform
-Developer Relations Advocate,Safe: AUS/NZ,MS CompSci / HCI,50000,6,6,1000,6,92000,130000,175000,225000,310000,5,7,4,3.5,42,8,8,7,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform
-Developer Relations Advocate,Safe: CAN,MS CompSci / HCI,38000,6,6,1400,6,84000,118000,155000,195000,265000,5,7,3,2.5,42,8,8,7,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform`;
+const RAW_CSV = `Role_Title,Country_Path,Masters_Degree,Masters_Cost_USD,Acceptance_Ease_1_10,Placements_1_10,Global_Employers_Count,Layoff_Recovery_Ease_1_10,Interview_Comp_1_10,Salary_Fresher_USD,Salary_5Yr_USD,Salary_10Yr_USD,Salary_20Yr_USD,Salary_Max_USD,Fresher_Stability_1_10,Senior_Stability_1_10,PR_Ease_1_10,PR_Timeline_Years,AI_Resilience_20Yr_Pct,Remote_Work_1_10,Personal_Profile_Fit_1_10,Cognitive_Alignment_1_10,Primary_Skill,Secondary_Skill,Mid_Career_Role,Endgame_Role
+Software Engineer,High-Risk: USA,MS Computer Science,68000,7,9,180000,9,8,125000,180000,260000,360000,600000,7,9,2,8.5,65,9,8,9,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
+Software Engineer,Safe: AUS/NZ,MS Computer Science,48000,8,8,42000,9,7,92000,135000,185000,240000,340000,8,9,7,3.5,65,8,8,9,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
+Software Engineer,Safe: CAN,MS Computer Science,36000,7,8,55000,9,7,85000,122000,165000,215000,300000,8,9,8,2.5,65,8,8,9,Coding,Systems Architecture,Staff Engineer / Engineering Manager,Chief Technology Officer (CTO)
+Cloud & DevOps Engineer,High-Risk: USA,MS CompSci / Cloud Systems,66000,7,9,85000,9,7,130000,185000,260000,350000,520000,8,9,2,8.5,75,9,8,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
+Cloud & DevOps Engineer,Safe: AUS/NZ,MS CompSci / Cloud Systems,48000,8,8,20000,9,6,95000,138000,188000,245000,330000,9,9,7,3.5,75,8,8,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
+Cloud & DevOps Engineer,Safe: CAN,MS CompSci / Cloud Systems,35000,7,8,28000,9,6,88000,125000,165000,215000,285000,9,9,8,2.5,75,8,8,9,Cloud Infrastructure,Reliability Engineering,Principal DevOps / Infrastructure Lead,VP of Infrastructure / Cloud Architect
+Data & ML Engineer,High-Risk: USA,MS Artificial Intelligence / CS,75000,7,8,95000,8,9,140000,215000,310000,430000,650000,6,8,2,8.5,72,8,5,9,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
+Data & ML Engineer,Safe: AUS/NZ,MS Artificial Intelligence / CS,54000,8,7,22000,8,8,102000,152000,220000,295000,420000,7,8,7,3.5,72,7,5,9,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
+Data & ML Engineer,Safe: CAN,MS Artificial Intelligence / CS,42000,7,7,28000,8,8,94000,138000,195000,260000,360000,7,8,8,2.5,72,7,5,9,Machine Learning,Data Engineering,Lead AI Architect / ML Manager,Chief AI Officer (CAIO) / VP of AI
+Systems & Embedded Engineer,High-Risk: USA,MS Electrical & Comp Eng,68000,6,8,45000,8,8,122000,175000,245000,330000,460000,8,9,2,8.5,84,4,8,10,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
+Systems & Embedded Engineer,Safe: AUS/NZ,MS Electrical & Comp Eng,50000,7,7,9000,8,7,92000,130000,175000,235000,310000,9,9,7,3.5,84,3,8,10,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
+Systems & Embedded Engineer,Safe: CAN,MS Electrical & Comp Eng,38000,7,7,12000,8,7,84000,118000,158000,205000,270000,9,9,8,2.5,84,3,8,10,Low-Level Coding,Hardware / Firmware,Principal Firmware / Hardware Lead,VP of Hardware Engineering
+3D & Graphics Engineer,High-Risk: USA,MS CompSci (Graphics),72000,7,8,6500,6,8,125000,180000,250000,330000,460000,5,8,2,8.5,76,7,10,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
+3D & Graphics Engineer,Safe: AUS/NZ,MS CompSci (Graphics),50000,8,7,1800,6,7,88000,124000,160000,200000,270000,7,8,7,3.5,76,6,10,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
+3D & Graphics Engineer,Safe: CAN,MS CompSci (Graphics),42000,8,7,2400,6,7,80000,112000,145000,180000,235000,7,8,8,2.5,76,6,10,9,Real-Time Rendering,3D Math & Shaders,Lead Engine / Graphics Architect,Technical Director (Film / Gaming)
+Robotics Engineer,High-Risk: USA,MS Robotics Eng,80000,6,7,6500,5,8,124000,180000,255000,340000,480000,7,9,2,8.0,83,3,7,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
+Robotics Engineer,Safe: AUS/NZ,MS Robotics Eng,54000,7,6,1500,5,7,88000,125000,160000,205000,270000,8,9,7,3.5,83,3,7,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
+Robotics Engineer,Safe: CAN,MS Robotics Eng,44000,7,6,2000,5,7,80000,114000,145000,185000,240000,8,9,8,2.5,83,3,7,9,Robotics & Control,Hardware Integration,Robotics Lead / Automation Architect,VP of Robotics & Automation
+Digital Twin & Simulation Engineer,High-Risk: USA,MS Systems / Industrial Eng,68000,7,8,8200,6,7,118000,172000,245000,320000,420000,7,8,2,8.5,80,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
+Digital Twin & Simulation Engineer,Safe: AUS/NZ,MS Systems / Industrial Eng,48000,8,7,2200,6,6,86000,120000,155000,180000,240000,8,8,7,3.5,80,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
+Digital Twin & Simulation Engineer,Safe: CAN,MS Systems / Industrial Eng,39000,8,7,3200,6,6,78000,108000,138000,165000,210000,8,8,8,2.5,80,6,9,9,Physics Simulation,Systems Modeling,Senior Simulation Architect,Head of Virtual Operations
+Spatial Computing Engineer,High-Risk: USA,MS HCI / Spatial Tech,74000,7,6,3500,5,7,118000,170000,240000,320000,420000,4,6,2,9.0,65,7,10,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
+Spatial Computing Engineer,Safe: AUS/NZ,MS HCI / Spatial Tech,48000,8,5,800,5,6,85000,122000,155000,185000,230000,5,6,7,3.5,65,6,10,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
+Spatial Computing Engineer,Safe: CAN,MS HCI / Spatial Tech,42000,8,5,1100,5,6,78000,112000,140000,168000,205000,5,6,8,2.5,65,6,10,8,XR Development,Interaction Design,Lead XR Developer,Head of Spatial Tech / Immersive Prod
+Quantitative Researcher,High-Risk: USA,MS Financial Eng / Math,85000,3,6,3500,4,10,175000,340000,580000,950000,2800000,4,5,2,8.5,58,4,2,10,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
+Quantitative Researcher,Safe: AUS/NZ,MS Financial Eng / Math,60000,4,5,500,4,9,110000,180000,280000,450000,800000,4,5,7,4.0,58,4,2,10,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
+Quantitative Researcher,Safe: CAN,MS Financial Eng / Math,45000,4,5,650,4,9,95000,160000,240000,380000,600000,4,5,8,2.5,58,4,2,10,Quantitative Math,Statistical Modeling,Senior Quant Portfolio Manager,Chief Investment Officer (CIO) / Partner
+Quantitative Trader,High-Risk: USA,MS Applied Math / MFE,85000,3,5,2500,3,10,165000,310000,520000,850000,2500000,3,4,2,8.5,45,2,3,9,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
+Quantitative Trader,Safe: AUS/NZ,MS Applied Math / MFE,60000,4,5,400,3,9,105000,170000,260000,400000,700000,3,4,7,4.0,45,2,3,9,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
+Quantitative Trader,Safe: CAN,MS Applied Math / MFE,45000,4,5,500,3,9,92000,155000,220000,340000,550000,3,4,8,2.5,45,2,3,9,Risk Pricing,Fast Execution,Head of Algorithmic Trading,Partner / Managing Director
+Quantitative Systems Developer,High-Risk: USA,MS CompSci (Systems),75000,6,7,4500,5,9,160000,250000,380000,540000,950000,6,8,2,8.5,82,4,5,10,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
+Quantitative Systems Developer,Safe: AUS/NZ,MS CompSci (Systems),52000,7,6,800,5,8,108000,170000,235000,310000,440000,7,8,7,3.5,82,4,5,10,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
+Quantitative Systems Developer,Safe: CAN,MS CompSci (Systems),40000,7,6,1100,5,8,98000,150000,205000,270000,380000,7,8,8,2.5,82,4,5,10,Low-Latency Coding,Trading Systems,Lead Low-Latency Systems Architect,Chief Technology Officer (Prop/HFT)
+Quantitative Risk Analyst,High-Risk: USA,MS Fin Math / Data Sci,70000,4,7,6500,5,8,122000,180000,260000,350000,500000,6,7,2,8.5,50,5,3,8,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
+Quantitative Risk Analyst,Safe: AUS/NZ,MS Fin Math / Data Sci,52000,5,6,1500,5,7,90000,135000,185000,240000,320000,6,7,7,3.5,50,5,3,8,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
+Quantitative Risk Analyst,Safe: CAN,MS Fin Math / Data Sci,38000,5,6,1900,5,7,82000,120000,165000,210000,280000,6,7,8,2.5,50,5,3,8,Risk Analytics,Portfolio Optimization,Director of Financial Risk,Chief Risk Officer (CRO)
+Web3 & Mechanism Designer,High-Risk: USA,MS CompSci / Game Theory,65000,6,7,1800,3,8,130000,190000,280000,400000,800000,3,5,2,8.5,75,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
+Web3 & Mechanism Designer,Safe: AUS/NZ,MS CompSci / Game Theory,48000,7,6,300,3,7,95000,140000,190000,260000,450000,3,5,7,4.0,75,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
+Web3 & Mechanism Designer,Safe: CAN,MS CompSci / Game Theory,36000,7,6,450,3,7,88000,125000,175000,240000,380000,3,5,8,2.5,75,9,7,8,Game Theory,Token Economics,Lead Protocol Architect,Founder / Chief Protocol Officer
+Product Analyst / Associate PM,High-Risk: USA,MS Tech Management / MBA,80000,7,7,32000,7,8,120000,180000,265000,380000,750000,6,8,2,8.5,70,8,8,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
+Product Analyst / Associate PM,Safe: AUS/NZ,MS Tech Management / MBA,58000,8,6,7500,7,7,92000,135000,185000,250000,420000,7,8,7,3.5,70,7,8,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
+Product Analyst / Associate PM,Safe: CAN,MS Tech Management / MBA,44000,8,6,9800,7,7,84000,122000,165000,220000,350000,7,8,8,2.5,70,7,8,7,Product Strategy,Cross-Functional Leadership,Senior Product Manager / Group PM,Chief Product Officer (CPO) / CEO
+Business & Strategy Analyst,High-Risk: USA,MBA (Strategy/Finance),100000,6,5,22000,7,9,135000,200000,300000,450000,850000,5,7,2,8.5,55,7,6,5,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
+Business & Strategy Analyst,Safe: AUS/NZ,MBA (Strategy/Finance),70000,7,5,5200,7,8,100000,148000,210000,290000,450000,6,7,7,4.0,55,6,6,5,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
+Business & Strategy Analyst,Safe: CAN,MBA (Strategy/Finance),52000,7,5,6500,7,8,92000,135000,185000,250000,380000,6,7,8,2.5,55,6,6,5,Strategic Planning,Financial Modeling,BizOps Director / Chief of Staff,Chief Operating Officer (COO) / CEO
+Management & Tech Consultant,High-Risk: USA,MBA / MS Tech Management,95000,7,6,28000,7,8,138000,205000,310000,480000,900000,5,6,2,8.5,62,7,8,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
+Management & Tech Consultant,Safe: AUS/NZ,MBA / MS Tech Management,65000,8,6,6500,7,7,100000,150000,215000,320000,500000,6,6,7,4.0,62,6,8,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
+Management & Tech Consultant,Safe: CAN,MBA / MS Tech Management,48000,8,6,8200,7,7,92000,138000,192000,280000,420000,6,6,8,2.5,62,6,8,5,Business Advisory,Executive Communication,Engagement Manager / Consulting Director,Managing Director / Corporate VP
+Technical Program Manager (TPM),High-Risk: USA,MS Eng Management / CompSci,72000,8,8,25000,8,8,135000,190000,270000,360000,550000,7,9,2,8.5,70,8,9,6,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
+Technical Program Manager (TPM),Safe: AUS/NZ,MS Eng Management / CompSci,54000,9,7,5500,8,7,105000,145000,195000,250000,360000,8,9,7,3.5,70,7,9,6,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
+Technical Program Manager (TPM),Safe: CAN,MS Eng Management / CompSci,40000,8,7,7200,8,7,95000,130000,175000,220000,310000,8,9,8,2.5,70,7,9,6,Program Management,Technical Risk Mitigation,Principal TPM / Director of Programs,VP of Technical Operations
+Pricing & Revenue Analyst,High-Risk: USA,MS Econ / Applied Analytics,68000,6,6,11000,6,7,112000,165000,235000,320000,480000,6,8,2,8.5,50,8,6,7,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
+Pricing & Revenue Analyst,Safe: AUS/NZ,MS Econ / Applied Analytics,52000,7,5,2500,6,6,86000,122000,168000,220000,310000,7,8,7,3.5,50,7,6,7,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
+Pricing & Revenue Analyst,Safe: CAN,MS Econ / Applied Analytics,38000,7,5,3200,6,6,78000,112000,152000,198000,270000,7,8,8,2.5,50,7,6,7,Econometrics,Monetization Strategy,Director of Monetization & Pricing,Chief Commercial Officer (CCO)
+Operations Research Analyst,High-Risk: USA,MS Operations Research,68000,6,7,12000,7,8,115000,165000,235000,320000,440000,7,8,2,8.5,70,6,6,9,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
+Operations Research Analyst,Safe: AUS/NZ,MS Operations Research,54000,7,6,2800,7,7,88000,124000,160000,200000,260000,8,8,7,3.5,70,5,6,9,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
+Operations Research Analyst,Safe: CAN,MS Operations Research,40000,7,6,3500,7,7,80000,112000,145000,180000,230000,8,8,8,2.5,70,5,6,9,Mathematical Optimization,Logistics Planning,Director of Supply Chain Optimization,VP of Global Supply Chain
+Smart Infrastructure Modeler,High-Risk: USA,MS Energy / Urban Systems,64000,7,7,6500,6,7,105000,148000,200000,270000,360000,8,9,2,8.5,76,5,7,8,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
+Smart Infrastructure Modeler,Safe: AUS/NZ,MS Energy / Urban Systems,52000,8,6,1800,6,6,84000,116000,146000,182000,230000,9,9,7,3.5,76,4,7,8,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
+Smart Infrastructure Modeler,Safe: CAN,MS Energy / Urban Systems,38000,8,6,2200,6,6,76000,106000,136000,166000,210000,9,9,8,2.5,76,4,7,8,Capacity Planning,Systems Engineering,Lead Infrastructure Systems Modeler,Director of Smart Infrastructure
+Developer Relations Advocate,High-Risk: USA,MS CompSci / HCI,68000,7,7,5500,6,7,125000,175000,240000,320000,460000,5,7,2,8.5,58,9,8,6,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform
+Developer Relations Advocate,Safe: AUS/NZ,MS CompSci / HCI,50000,8,6,1000,6,6,92000,130000,175000,225000,310000,6,7,7,3.5,58,8,8,6,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform
+Developer Relations Advocate,Safe: CAN,MS CompSci / HCI,38000,8,6,1400,6,6,84000,118000,155000,195000,265000,6,7,8,2.5,58,8,8,6,Developer Evangelism,Technical Writing & Coding,Director of Developer Ecosystem,VP of Developer Platform`;
 
 function parseCSV(csv) {
   const lines = csv.trim().split('\n');
   const headers = lines[0].split(',');
-  return lines.slice(1).map(line => {
+  return lines.slice(1).map((line, originalIndex) => {
     const vals = line.split(',');
-    const obj = {};
+    const obj = { _idx: originalIndex };
     headers.forEach((h, i) => {
       const v = vals[i];
       const num = Number(v);
@@ -882,13 +930,13 @@ function renderOverview() {
   const usa = byCountry('High-Risk: USA');
   const avgFresher = Math.round(usa.reduce((s, d) => s + d.Salary_Fresher_USD, 0) / usa.length);
   const avgMax = Math.round(usa.reduce((s, d) => s + d.Salary_Max_USD, 0) / usa.length);
-  const avgAI = Math.round(usa.reduce((s, d) => s + d.AI_Displacement_20Yr_Pct, 0) / usa.length);
+  const avgAI = Math.round(usa.reduce((s, d) => s + d.AI_Resilience_20Yr_Pct, 0) / usa.length);
   const avgStab = (usa.reduce((s, d) => s + d.Senior_Stability_1_10, 0) / usa.length).toFixed(1);
 
   document.getElementById('kpi-row').innerHTML = `
     <div class="kpi"><div class="kpi-label">Avg Entry Salary (USA)</div><div class="kpi-value">${fmt(avgFresher)}</div><div class="kpi-note">Across ${ROLES.length} consolidated roles</div></div>
     <div class="kpi"><div class="kpi-label">Avg Salary Ceiling (USA)</div><div class="kpi-value">${fmt(avgMax)}</div><div class="kpi-note">Peak career potential</div></div>
-    <div class="kpi"><div class="kpi-label">Avg AI Displacement</div><div class="kpi-value">${avgAI}%</div><div class="kpi-note">20-year projection</div></div>
+    <div class="kpi"><div class="kpi-label">Avg AI Resilience</div><div class="kpi-value">${avgAI}%</div><div class="kpi-note">20-year safe retention</div></div>
     <div class="kpi"><div class="kpi-label">Avg Senior Stability</div><div class="kpi-value">${avgStab}<span style="font-size:14px;color:#ffffff">/10</span></div><div class="kpi-note">Career security index</div></div>
   `;
 
@@ -929,24 +977,24 @@ function renderOverview() {
     }
   });
 
-  // AI risk
-  const sortedAI = [...usa].sort((a, b) => b.AI_Displacement_20Yr_Pct - a.AI_Displacement_20Yr_Pct);
+  // AI resilience
+  const sortedAI = [...usa].sort((a, b) => b.AI_Resilience_20Yr_Pct - a.AI_Resilience_20Yr_Pct);
   clearChart('chart-ai-risk');
   CI['chart-ai-risk'] = new Chart(document.getElementById('chart-ai-risk'), {
     type: 'bar',
     data: {
       labels: sortedAI.map(d => shortName(d.Role_Title)),
       datasets: [{
-        data: sortedAI.map(d => d.AI_Displacement_20Yr_Pct),
+        data: sortedAI.map(d => d.AI_Resilience_20Yr_Pct),
         backgroundColor: sortedAI.map(d => {
-          if (d.AI_Displacement_20Yr_Pct >= 45) return '#ef4444';
-          if (d.AI_Displacement_20Yr_Pct >= 25) return '#f59e0b';
-          return '#10b981';
+          if (d.AI_Resilience_20Yr_Pct >= 75) return '#10b981';
+          if (d.AI_Resilience_20Yr_Pct >= 60) return '#3b82f6';
+          return '#f59e0b';
         }),
         borderColor: sortedAI.map(d => {
-          if (d.AI_Displacement_20Yr_Pct >= 45) return '#dc2626';
-          if (d.AI_Displacement_20Yr_Pct >= 25) return '#d97706';
-          return '#059669';
+          if (d.AI_Resilience_20Yr_Pct >= 75) return '#059669';
+          if (d.AI_Resilience_20Yr_Pct >= 60) return '#2563eb';
+          return '#d97706';
         }),
         borderWidth: 1,
         borderRadius: 2, borderSkipped: false,
@@ -955,9 +1003,9 @@ function renderOverview() {
     options: {
       indexAxis: 'y',
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw + '%' } } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw + '% Safe' } } },
       scales: {
-        x: { max: 70, ticks: { color: '#ffffff', callback: v => v + '%' }, grid: { color: '#262626' } },
+        x: { min: 30, max: 100, ticks: { color: '#ffffff', callback: v => v + '%' }, grid: { color: '#262626' } },
         y: { grid: { display: false }, ticks: { color: '#ffffff', font: { size: 9.5 } } }
       }
     }
@@ -969,7 +1017,7 @@ function renderOverview() {
     `<li class="rank-item"><span class="rank-num">${i + 1}.</span><span class="rank-name">${shortName(d.Role_Title)}</span><span class="rank-val num-positive mono" style="color:#ffffff">${fmt(d.Salary_Max_USD)}</span></li>`
   ).join('');
 
-  const topStab = [...usa].sort((a, b) => b.Senior_Stability_1_10 - a.Senior_Stability_1_10 || a.Fresher_Volatility_1_10 - b.Fresher_Volatility_1_10).slice(0, 8);
+  const topStab = [...usa].sort((a, b) => b.Senior_Stability_1_10 - a.Senior_Stability_1_10 || b.Fresher_Stability_1_10 - a.Fresher_Stability_1_10).slice(0, 8);
   document.getElementById('rank-stability').innerHTML = topStab.map((d, i) =>
     `<li class="rank-item"><span class="rank-num">${i + 1}.</span><span class="rank-name">${shortName(d.Role_Title)}</span><span class="rank-val mono" style="color:#ffffff">${d.Senior_Stability_1_10}/10</span></li>`
   ).join('');
@@ -1014,6 +1062,58 @@ function renderOverview() {
 }
 
 // ============================================================
+// ROLE DESCRIPTIONS & METRIC MEANINGS DICTIONARY
+// ============================================================
+const ROLE_DESCRIPTIONS = {
+  "Software Engineer": "Builds apps, backend APIs, and systems that millions of people use every day. Direct pipeline from junior coder to software architect or Chief Technology Officer (CTO).",
+  "Cloud & DevOps Engineer": "Keeps company websites and servers online 24/7 without crashing. Automates deployments, security, and cloud infrastructure on AWS/GCP/Azure. Leads to Head of Cloud Infrastructure or VP of Operations.",
+  "Data & ML Engineer": "Collects giant amounts of messy data and builds machine learning models to make smart predictions. Direct track to Chief AI Officer (CAIO) or Head of Machine Learning.",
+  "Systems & Embedded Engineer": "Writes the low-level code that lives inside microchips, cars, satellites, and medical devices. Very hard to replace with AI because it directly controls physical hardware. Leads to VP of Engineering.",
+  "3D & Graphics Engineer": "Programs the visual physics and graphics engines that make video games, simulations, and virtual worlds look realistic. Writes custom GPU shaders and 3D rendering pipelines. Leads to Chief Creative Technologist.",
+  "Robotics Engineer": "Combines computer code with motors, sensors, and gears to make robots move and perform tasks autonomously in factories and hospitals. One of the most AI-immune roles. Leads to VP of Robotics.",
+  "Digital Twin & Simulation Engineer": "Builds virtual, real-time computer models of real physical objects (like an airplane turbine or smart factory) to run stress tests before building them. Leads to Chief Systems Architect.",
+  "Spatial Computing Engineer": "Creates 3D apps and user interfaces for virtual and augmented reality headsets (Apple Vision Pro, Meta Quest). Replaces 2D monitors with holographic screens and hand gestures. Leads to Head of Immersive Technology.",
+  "Quantitative Researcher": "Uses hardcore math, statistics, and machine learning to find profitable patterns in financial markets. High stress, elite compensation, and direct pipeline to running investment portfolios as a Chief Investment Officer (CIO) or Hedge Fund Partner.",
+  "Quantitative Trader": "Manages live trading algorithms and makes split-second decisions on options, futures, and stock markets. Manages active financial risk when the market fluctuates. Leads to Head of Trading or Wall Street Managing Director.",
+  "Quantitative Systems Developer": "Builds the lightning-fast trading engines used by quantitative hedge funds. Trades are won and lost in nanoseconds, so this role writes ultra-optimized C++ and kernel-level code. Leads to CTO of trading firms.",
+  "Quantitative Risk Analyst": "Calculates worst-case scenarios for investment banks and hedge funds to ensure a market crash won't bankrupt the firm. Designs mathematical guardrails and leads directly to Chief Risk Officer (CRO).",
+  "Web3 & Mechanism Designer": "Designs financial rules, incentive structures, and smart contracts for decentralized crypto networks and digital asset ecosystems. Leads to Head of Protocol Architecture or Web3 Founder.",
+  "Product Analyst / Associate PM": "Decides what features an app or tech product should build next by analyzing customer data and coordinating between engineering, design, and business teams. High-probability pipeline to Chief Product Officer (CPO) or CEO.",
+  "Business & Strategy Analyst": "Solves big-picture business puzzles for company leadership (e.g., 'Should we buy this competitor?' or 'Which country should we launch in next?'). The classic corporate management pipeline leading to Chief Strategy Officer (CSO) or Chief Operating Officer (COO).",
+  "Management & Tech Consultant": "Hired by Fortune 500 CEOs to fix expensive company problems and implement major digital transformations. High travel, fast networking, and direct pipeline to Senior Partner or corporate executive roles.",
+  "Technical Program Manager (TPM)": "Ensures complex multi-team engineering projects finish on time without chaos. Translates technical complexity into clear schedules. Leads to VP of Technical Operations or Chief of Staff.",
+  "Pricing & Revenue Analyst": "Uses customer behavior data and demand elasticity models to set optimal prices for products (like airline dynamic pricing or SaaS subscription tiers). Leads to Chief Commercial Officer (CCO).",
+  "Operations Research Analyst": "Uses advanced math and mathematical programming to solve giant logistics puzzles (like how Amazon routes millions of delivery trucks or airlines schedule planes during storms). Leads to VP of Supply Chain or COO.",
+  "Smart Infrastructure Modeler": "Uses IoT sensor data and computer simulations to design intelligent city systems, power grids, and traffic networks. Leads to Chief Infrastructure Officer.",
+  "Developer Relations Advocate": "Serves as the public bridge between an engineering company and outside programmers. Writes tutorials, gives tech conference keynotes, and gathers feedback. Leads to VP of Developer Ecosystem."
+};
+
+const COLUMN_MEANINGS = {
+  "Role & Career Ladder": "Career Progression Pipeline: The entry-level job title, followed by the 5–10 year mid-career milestone, leading to the peak endgame executive destination (e.g. CTO, CIO, VP).",
+  "Country": "Country Path: Target destination and immigration route. 'High-Risk: USA' (highest compensation, severe H-1B friction), 'Safe: AUS/NZ' (stable points PR, 38-hr workweeks), or 'Safe: Canada' (fastest PR).",
+  "Primary & Secondary Skills": "Skill Matrix: Primary Skill is the core technical discipline required for daily execution. Secondary Skill is the multiplier capability needed for leadership promotion.",
+  "Degree Required": "Masters Degree: The graduate degree (MS / MBA / MFE) that provides the highest placement probability and compensation leverage for this role.",
+  "Tuition": "Masters Cost (USD): Estimated total international student tuition for the master's degree in that country (tuition only, excluding living expenses).",
+  "Acceptance Ease": "Acceptance Ease (1–10): How easily a STEM student with your specific profile (B.Tech IT + IIT Madras BS Data Science + CSI/Council Leadership) can get admitted into a credible Tier-1 Master's program without a gap year. 10 = High acceptance probability; 1 = Extremely tough.",
+  "Placements": "Campus Placements (1–10): Direct campus recruitment and corporate hiring pipelines upon graduation. 10 = Direct on-campus placement pipeline; 1 = Zero campus hiring (100% cold hunting).",
+  "Fresher Pay": "Fresher Salary (USD): Expected total starting compensation in year 1 after master's graduation (base salary + performance bonuses/RSUs).",
+  "5yr Pay": "5-Year Salary (USD): Expected total compensation after 5 years of solid performance and career promotions.",
+  "10yr Pay": "10-Year Salary (USD): Senior benchmark compensation at the 10-year mark (Senior IC, Lead, Engineering Manager, or Director level).",
+  "20yr Pay": "20-Year Salary (USD): Veteran compensation after 20 years for executive leaders, partners, and principal architects.",
+  "Ceiling Pay": "Max Salary (USD): Realistic compensation ceiling for top performers at the peak of the field (top 5–10% outcomes at partner/executive levels).",
+  "Fresher Stability": "Fresher Stability (1–10): Junior job market resilience during economic downturns. 10 = Stable junior hiring year-round; 1 = Highly volatile (first to face hiring freezes or revoked offers).",
+  "Senior Stability": "Senior Stability (1–10): Career durability once you reach 10+ years of experience. 10 = Nearly impossible to displace due to deep domain expertise; 1 = High replacement risk.",
+  "PR Ease": "Permanent Residency Ease (1–10): Smoothness of securing PR or citizenship. 10 = Fast, predictable points-based or provincial PR (e.g. Canada 8/10, Australia 7/10); 1 = Extreme friction / random lottery / decades wait (USA 2/10).",
+  "PR Timeline": "PR Timeline (Years): Average estimated years from your first day of work until permanent residency is officially granted.",
+  "AI Resilience": "AI Resilience (20yr %): Projected percentage of the role that is SAFE from artificial intelligence automation over the next 20 years. Higher % means much safer from AI automation.",
+  "Remote Work": "Remote Work (1–10): Feasibility of doing this job 100% remotely. 10 = Completely asynchronous & digital; 1 = Physical presence in labs, factories, or trading desks mandatory.",
+  "Personal Fit": "Personal Profile Fit (1–10): Tailored specifically to your strengths (Blender, Substance Painter, Unreal Blueprints, Minecraft Redstone discrete logic, 3D vectors/spatial math, fest & sports logistics) vs. your dislikes (continuous math, Laplace/Fourier transforms, abstract matrices). Higher = More aligned.",
+  "Cognitive": "Cognitive Alignment (1–10): How much the job rewards logical systems thinking and technical problem solving vs. social networking or memorization.",
+  "Employers": "Global Employers Count: Approximate number of companies globally hiring for this role. Higher numbers mean more job mobility.",
+  "Layoff Recovery": "Layoff Recovery Ease (1–10): How easily and quickly you can find another job if your company has layoffs. 10 = Instant rehire (thousands of open jobs); 1 = Very narrow, illiquid job market."
+};
+
+// ============================================================
 // FULL DATASET TABLE
 // ============================================================
 function populateSkillSelect() {
@@ -1045,39 +1145,181 @@ function renderTable() {
     if (skill !== 'all' && d.Primary_Skill !== skill) return false;
     return true;
   });
-  filtered.sort((a, b) => order === 'desc' ? b[sortKey] - a[sortKey] : a[sortKey] - b[sortKey]);
+
+  if (sortKey === 'default') {
+    filtered.sort((a, b) => order === 'desc' ? b._idx - a._idx : a._idx - b._idx);
+  } else if (sortKey === 'Role_Title') {
+    const countryWeight = { 'High-Risk: USA': 0, 'Safe: AUS/NZ': 1, 'Safe: CAN': 2 };
+    filtered.sort((a, b) => {
+      const cmp = a.Role_Title.localeCompare(b.Role_Title);
+      if (cmp !== 0) return order === 'desc' ? -cmp : cmp;
+      return (countryWeight[a.Country_Path] || 0) - (countryWeight[b.Country_Path] || 0);
+    });
+  } else {
+    filtered.sort((a, b) => {
+      const valA = Number(a[sortKey]) || 0;
+      const valB = Number(b[sortKey]) || 0;
+      return order === 'desc' ? valB - valA : valA - valB;
+    });
+  }
 
   document.getElementById('table-body').innerHTML = filtered.map(d => `
     <tr>
       <td>
-        <div class="table-ladder-cell">
+        <div class="role-hover-trigger" data-role="${d.Role_Title}" data-mid="${d.Mid_Career_Role}" data-end="${d.Endgame_Role}">
           <div style="font-weight:600;color:#ffffff;font-size:12.5px">${d.Role_Title}</div>
           <div><span class="ladder-stage stage-mid" style="font-size:9px">Mid</span> <span style="color:#d4d4d4">${d.Mid_Career_Role}</span></div>
           <div><span class="ladder-stage stage-endgame" style="font-size:9px">Endgame</span> <span style="color:#fca5a5;font-weight:600">${d.Endgame_Role}</span></div>
         </div>
       </td>
-      <td>${countryTag(d.Country_Path)}</td>
-      <td>
+      <td class="cell-hoverable" data-col="Country">${countryTag(d.Country_Path)}</td>
+      <td class="cell-hoverable" data-col="Primary & Secondary Skills">
         <div style="display:flex;flex-direction:column;gap:4px">
           <span class="badge-skill badge-primary">${d.Primary_Skill}</span>
           <span class="badge-skill badge-secondary">${d.Secondary_Skill}</span>
         </div>
       </td>
-      <td style="font-size:11px;color:#ffffff">${d.Masters_Degree}</td>
-      <td class="mono num-positive" style="color:#ffffff">${fmt(d.Masters_Cost_USD)}</td>
-      <td class="mono num-positive" style="color:#ffffff">${fmt(d.Salary_Fresher_USD)}</td>
-      <td class="mono" style="color:#ffffff">${fmt(d.Salary_5Yr_USD)}</td>
-      <td class="mono" style="color:#ffffff">${fmt(d.Salary_10Yr_USD)}</td>
-      <td class="mono" style="color:#ffffff">${fmt(d.Salary_20Yr_USD)}</td>
-      <td class="mono num-positive" style="color:#ffffff">${fmt(d.Salary_Max_USD)}</td>
-      <td><span class="${riskClass(d.AI_Displacement_20Yr_Pct)} mono">${d.AI_Displacement_20Yr_Pct}%</span></td>
-      <td>${scoreBar(d.Senior_Stability_1_10)}</td>
-      <td>${scoreBar(d.Remote_Work_1_10)}</td>
-      <td>${scoreBar(d.Undergrad_Fit_1_10)}</td>
-      <td>${scoreBar(d.Cognitive_Alignment_1_10)}</td>
-      <td class="mono" style="color:#ffffff">${d.Global_Employers_Count.toLocaleString()}</td>
+      <td class="cell-hoverable" data-col="Degree Required" style="font-size:11px;color:#ffffff">${d.Masters_Degree}</td>
+      <td class="cell-hoverable mono num-positive" data-col="Tuition" style="color:#ffffff">${fmt(d.Masters_Cost_USD)}</td>
+      <td class="cell-hoverable" data-col="Acceptance Ease">${scoreBar(d.Acceptance_Ease_1_10)}</td>
+      <td class="cell-hoverable" data-col="Placements">${scoreBar(d.Placements_1_10)}</td>
+      <td class="cell-hoverable mono num-positive" data-col="Fresher Pay" style="color:#ffffff">${fmt(d.Salary_Fresher_USD)}</td>
+      <td class="cell-hoverable mono" data-col="5yr Pay" style="color:#ffffff">${fmt(d.Salary_5Yr_USD)}</td>
+      <td class="cell-hoverable mono" data-col="10yr Pay" style="color:#ffffff">${fmt(d.Salary_10Yr_USD)}</td>
+      <td class="cell-hoverable mono" data-col="20yr Pay" style="color:#ffffff">${fmt(d.Salary_20Yr_USD)}</td>
+      <td class="cell-hoverable mono num-positive" data-col="Ceiling Pay" style="color:#ffffff">${fmt(d.Salary_Max_USD)}</td>
+      <td class="cell-hoverable" data-col="Fresher Stability">${scoreBar(d.Fresher_Stability_1_10)}</td>
+      <td class="cell-hoverable" data-col="Senior Stability">${scoreBar(d.Senior_Stability_1_10)}</td>
+      <td class="cell-hoverable" data-col="PR Ease">${scoreBar(d.PR_Ease_1_10)}</td>
+      <td class="cell-hoverable mono" data-col="PR Timeline" style="color:#ffffff">${d.PR_Timeline_Years}y</td>
+      <td class="cell-hoverable" data-col="AI Resilience"><span class="badge-win" style="background:${d.AI_Resilience_20Yr_Pct >= 75 ? '#14532d' : d.AI_Resilience_20Yr_Pct >= 60 ? '#1e3a8a' : '#78350f'};color:#ffffff;border:none;">${d.AI_Resilience_20Yr_Pct}%</span></td>
+      <td class="cell-hoverable" data-col="Remote Work">${scoreBar(d.Remote_Work_1_10)}</td>
+      <td class="cell-hoverable" data-col="Personal Fit">${scoreBar(d.Personal_Profile_Fit_1_10)}</td>
+      <td class="cell-hoverable" data-col="Cognitive">${scoreBar(d.Cognitive_Alignment_1_10)}</td>
+      <td class="cell-hoverable mono" data-col="Employers" style="color:#ffffff">${d.Global_Employers_Count.toLocaleString()}</td>
+      <td class="cell-hoverable" data-col="Layoff Recovery">${scoreBar(d.Layoff_Recovery_Ease_1_10)}</td>
     </tr>
   `).join('');
+}
+
+function setupTableTooltips() {
+  const tooltip = document.getElementById('table-floating-tooltip');
+  if (!tooltip) return;
+
+  function showTooltip(html, e) {
+    tooltip.innerHTML = html;
+    tooltip.classList.add('visible');
+    positionTooltip(e);
+  }
+
+  function hideTooltip() {
+    tooltip.classList.remove('visible');
+  }
+
+  function positionTooltip(e) {
+    const pad = 14;
+    let x = e.clientX + pad;
+    let y = e.clientY + pad;
+    const rect = tooltip.getBoundingClientRect();
+    if (x + rect.width > window.innerWidth - 12) {
+      x = e.clientX - rect.width - pad;
+    }
+    if (y + rect.height > window.innerHeight - 12) {
+      y = e.clientY - rect.height - pad;
+    }
+    tooltip.style.left = Math.max(10, x) + 'px';
+    tooltip.style.top = Math.max(10, y) + 'px';
+  }
+
+  document.addEventListener('mousemove', e => {
+    if (tooltip.classList.contains('visible')) {
+      positionTooltip(e);
+    }
+  });
+
+  const table = document.querySelector('#view-explore table');
+  if (!table) return;
+
+  table.addEventListener('mouseover', e => {
+    // 1. Check if hovering role trigger in first column
+    const roleEl = e.target.closest('.role-hover-trigger');
+    if (roleEl) {
+      const role = roleEl.dataset.role;
+      const mid = roleEl.dataset.mid;
+      const end = roleEl.dataset.end;
+      const desc = ROLE_DESCRIPTIONS[role] || 'Specialized technical and strategic career track.';
+      const html = `
+        <div class="tooltip-header">
+          <div class="tooltip-title">${role}</div>
+          <span class="tooltip-tag">Role Profile</span>
+        </div>
+        <div class="tooltip-desc">${desc}</div>
+        <div class="tooltip-ladder">
+          <div class="tooltip-ladder-row"><span class="ladder-stage stage-mid" style="font-size:8.5px">Mid-Career</span> <span style="color:#ffffff">${mid}</span></div>
+          <div class="tooltip-ladder-row"><span class="ladder-stage stage-endgame" style="font-size:8.5px">Endgame</span> <span style="color:#fca5a5">${end}</span></div>
+        </div>
+      `;
+      showTooltip(html, e);
+      return;
+    }
+
+    // 2. Check if hovering column header th
+    const thEl = e.target.closest('th.th-hoverable');
+    if (thEl) {
+      const col = thEl.dataset.col;
+      const meaning = COLUMN_MEANINGS[col] || 'Metric evaluation parameter.';
+      const html = `
+        <div class="tooltip-header">
+          <div class="tooltip-title">${col}</div>
+          <span class="tooltip-tag">Column Metric</span>
+        </div>
+        <div class="tooltip-desc">${meaning}</div>
+      `;
+      showTooltip(html, e);
+      return;
+    }
+
+    // 3. Check if hovering any column cell
+    const cellEl = e.target.closest('.cell-hoverable');
+    if (cellEl) {
+      const col = cellEl.dataset.col;
+      const meaning = COLUMN_MEANINGS[col] || 'Metric attribute.';
+      const html = `
+        <div class="tooltip-header">
+          <div class="tooltip-title">${col}</div>
+          <span class="tooltip-tag">Column Attribute</span>
+        </div>
+        <div class="tooltip-desc">${meaning}</div>
+      `;
+      showTooltip(html, e);
+      return;
+    }
+  });
+
+  table.addEventListener('mouseout', e => {
+    const rel = e.relatedTarget;
+    if (!rel || !table.contains(rel)) {
+      hideTooltip();
+    } else {
+      if (!rel.closest('.role-hover-trigger') && !rel.closest('.th-hoverable') && !rel.closest('.cell-hoverable')) {
+        hideTooltip();
+      }
+    }
+  });
+}
+
+const sortSelectEl = document.getElementById('filter-sort');
+if (sortSelectEl) {
+  sortSelectEl.addEventListener('change', () => {
+    const orderSelectEl = document.getElementById('filter-order');
+    if (orderSelectEl) {
+      if (sortSelectEl.value === 'default' || sortSelectEl.value === 'Role_Title') {
+        orderSelectEl.value = 'asc';
+      } else {
+        orderSelectEl.value = 'desc';
+      }
+    }
+  });
 }
 
 ['filter-search', 'filter-country', 'filter-sort', 'filter-order'].forEach(id => {
@@ -1206,11 +1448,11 @@ function renderRiskView() {
     type: 'scatter',
     data: {
       datasets: [{
-        data: usa.map(d => ({ x: d.AI_Displacement_20Yr_Pct, y: d.Salary_Max_USD, role: d.Role_Title })),
+        data: usa.map(d => ({ x: d.AI_Resilience_20Yr_Pct, y: d.Salary_Max_USD, role: d.Role_Title })),
         backgroundColor: usa.map(d => {
-          if (d.AI_Displacement_20Yr_Pct >= 45) return '#ef4444';
-          if (d.AI_Displacement_20Yr_Pct >= 25) return '#f59e0b';
-          return '#10b981';
+          if (d.AI_Resilience_20Yr_Pct >= 75) return '#10b981';
+          if (d.AI_Resilience_20Yr_Pct >= 60) return '#3b82f6';
+          return '#ef4444';
         }),
         borderColor: '#ffffff',
         borderWidth: 1.5,
@@ -1221,10 +1463,10 @@ function renderRiskView() {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => [ctx.raw.role, 'AI Risk: ' + ctx.raw.x + '%', 'Ceiling: ' + fmt(ctx.raw.y)] } }
+        tooltip: { callbacks: { label: ctx => [ctx.raw.role, 'AI Resilience: ' + ctx.raw.x + '% Safe', 'Ceiling: ' + fmt(ctx.raw.y)] } }
       },
       scales: {
-        x: { title: { display: true, text: 'AI Displacement (%)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, grid: { color: '#262626' } },
+        x: { title: { display: true, text: 'AI Resilience (% Safe)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, min: 30, max: 100, grid: { color: '#262626' } },
         y: { title: { display: true, text: 'Salary Ceiling (USD)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff', callback: v => '$' + (v / 1000) + 'k' }, grid: { color: '#262626' } }
       }
     }
@@ -1235,11 +1477,11 @@ function renderRiskView() {
     type: 'scatter',
     data: {
       datasets: [{
-        data: usa.map(d => ({ x: d.Fresher_Volatility_1_10, y: d.Senior_Stability_1_10, role: d.Role_Title })),
+        data: usa.map(d => ({ x: d.Fresher_Stability_1_10, y: d.Senior_Stability_1_10, role: d.Role_Title })),
         backgroundColor: usa.map(d => {
-          if (d.Senior_Stability_1_10 >= 7 && d.Fresher_Volatility_1_10 <= 4) return '#10b981';
+          if (d.Senior_Stability_1_10 >= 7 && d.Fresher_Stability_1_10 >= 6) return '#10b981';
           if (d.Senior_Stability_1_10 >= 7) return '#3b82f6';
-          if (d.Fresher_Volatility_1_10 <= 4) return '#f59e0b';
+          if (d.Fresher_Stability_1_10 >= 6) return '#f59e0b';
           return '#ef4444';
         }),
         borderColor: '#ffffff',
@@ -1251,21 +1493,21 @@ function renderRiskView() {
       responsive: true, maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
-        tooltip: { callbacks: { label: ctx => [ctx.raw.role, 'Volatility: ' + ctx.raw.x + '/10', 'Stability: ' + ctx.raw.y + '/10'] } }
+        tooltip: { callbacks: { label: ctx => [ctx.raw.role, 'Fresher Stability: ' + ctx.raw.x + '/10', 'Senior Stability: ' + ctx.raw.y + '/10'] } }
       },
       scales: {
-        x: { title: { display: true, text: 'Entry Volatility (1-10)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, min: 1, max: 10, grid: { color: '#262626' } },
+        x: { title: { display: true, text: 'Fresher Stability (1-10)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, min: 1, max: 10, grid: { color: '#262626' } },
         y: { title: { display: true, text: 'Senior Stability (1-10)', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, min: 3, max: 11, grid: { color: '#262626' } }
       }
     }
   });
 
-  // PR difficulty
+  // PR ease
   const prData = COUNTRIES.map(c => {
     const rows = byCountry(c);
     return {
       country: c,
-      diff: (rows.reduce((s, d) => s + d.PR_Difficulty_1_10, 0) / rows.length).toFixed(1),
+      ease: (rows.reduce((s, d) => s + d.PR_Ease_1_10, 0) / rows.length).toFixed(1),
       timeline: (rows.reduce((s, d) => s + d.PR_Timeline_Years, 0) / rows.length).toFixed(1),
     };
   });
@@ -1275,8 +1517,8 @@ function renderRiskView() {
     data: {
       labels: prData.map(d => countryName(d.country)),
       datasets: [{
-        label: 'Difficulty (1-10)',
-        data: prData.map(d => d.diff),
+        label: 'PR Ease (1-10)',
+        data: prData.map(d => d.ease),
         backgroundColor: ['#ef4444', '#10b981', '#3b82f6'],
         borderColor: ['#dc2626', '#059669', '#2563eb'],
         borderWidth: 1, borderRadius: 2,
@@ -1301,7 +1543,7 @@ function renderRiskView() {
   // Security score
   const secScored = usa.map(d => ({
     ...d,
-    secScore: ((10 - d.AI_Displacement_20Yr_Pct / 10) * 0.4 + d.Senior_Stability_1_10 * 0.3 + (10 - d.Fresher_Volatility_1_10) * 0.3).toFixed(1)
+    secScore: ((d.AI_Resilience_20Yr_Pct / 10) * 0.4 + d.Senior_Stability_1_10 * 0.3 + d.Fresher_Stability_1_10 * 0.3).toFixed(1)
   })).sort((a, b) => b.secScore - a.secScore);
 
   clearChart('chart-security-score');
@@ -1328,9 +1570,9 @@ function renderRiskView() {
     options: {
       indexAxis: 'y',
       responsive: true, maintainAspectRatio: false,
-      plugins: { legend: { display: false } },
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: ctx => ctx.raw + ' / 10' } } },
       scales: {
-        x: { title: { display: true, text: 'Composite Security Index', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, grid: { color: '#262626' } },
+        x: { min: 3, max: 10, title: { display: true, text: 'Composite Security Index', color: '#ffffff', font: { weight: '600' } }, ticks: { color: '#ffffff' }, grid: { color: '#262626' } },
         y: { grid: { display: false }, ticks: { color: '#ffffff', font: { size: 9.5 } } }
       }
     }
@@ -1367,9 +1609,9 @@ function renderCompareView() {
   const b = entry(roleB, cmpCountry);
   if (!a || !b) return;
 
-  const radarLabels = ['Admission Comp.', 'Direct Hire', 'Interview Comp.', 'Stability', 'Remote Work', 'UG Fit', 'Cognitive Align.'];
-  const keysA = [a.Admission_Comp_1_10, a.Direct_Hire_1_10, a.Interview_Comp_1_10, a.Senior_Stability_1_10, a.Remote_Work_1_10, a.Undergrad_Fit_1_10, a.Cognitive_Alignment_1_10];
-  const keysB = [b.Admission_Comp_1_10, b.Direct_Hire_1_10, b.Interview_Comp_1_10, b.Senior_Stability_1_10, b.Remote_Work_1_10, b.Undergrad_Fit_1_10, b.Cognitive_Alignment_1_10];
+  const radarLabels = ['Acceptance Ease', 'Placements', 'Layoff Recovery', 'Senior Stability', 'Remote Work', 'Personal Match', 'Cognitive Fit'];
+  const keysA = [a.Acceptance_Ease_1_10, a.Placements_1_10, a.Layoff_Recovery_Ease_1_10, a.Senior_Stability_1_10, a.Remote_Work_1_10, a.Personal_Profile_Fit_1_10, a.Cognitive_Alignment_1_10];
+  const keysB = [b.Acceptance_Ease_1_10, b.Placements_1_10, b.Layoff_Recovery_Ease_1_10, b.Senior_Stability_1_10, b.Remote_Work_1_10, b.Personal_Profile_Fit_1_10, b.Cognitive_Alignment_1_10];
 
   clearChart('chart-radar');
   CI['chart-radar'] = new Chart(document.getElementById('chart-radar'), {
@@ -1426,8 +1668,7 @@ function renderCompareView() {
     },
     options: {
       responsive: true, maintainAspectRatio: false,
-      plugins: {
-        legend: { labels: { color: '#ffffff' } },
+      plugins: { legend: { labels: { color: '#ffffff' } },
         tooltip: { callbacks: { label: ctx => ctx.dataset.label + ': ' + fmt(ctx.raw) } }
       },
       scales: {
@@ -1444,11 +1685,16 @@ function renderCompareView() {
     ['Secondary Skill', 'Secondary_Skill', false],
     ['Degree Required', 'Masters_Degree', false],
     ['Tuition', 'Masters_Cost_USD', true],
+    ['Personal Match', 'Personal_Profile_Fit_1_10', false, '/10'],
+    ['Acceptance Ease', 'Acceptance_Ease_1_10', false, '/10'],
+    ['Campus Placements', 'Placements_1_10', false, '/10'],
     ['Global Employers', 'Global_Employers_Count', false],
-    ['AI Displacement', 'AI_Displacement_20Yr_Pct', false, '%'],
-    ['PR Difficulty', 'PR_Difficulty_1_10', false, '/10'],
+    ['Layoff Recovery', 'Layoff_Recovery_Ease_1_10', false, '/10'],
+    ['AI Safe Resilience', 'AI_Resilience_20Yr_Pct', false, '%'],
+    ['PR Ease', 'PR_Ease_1_10', false, '/10'],
     ['PR Timeline', 'PR_Timeline_Years', false, ' yrs'],
-    ['Entry Volatility', 'Fresher_Volatility_1_10', false, '/10'],
+    ['Fresher Stability', 'Fresher_Stability_1_10', false, '/10'],
+    ['Senior Stability', 'Senior_Stability_1_10', false, '/10'],
   ];
 
   document.getElementById('compare-details').innerHTML = [a, b].map((d, i) => `
@@ -1540,15 +1786,19 @@ function renderCountryCompareView() {
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Permanent Residency (PR)</span>
-            <span class="country-stat-val" style="color:#ef4444;">${usa.PR_Difficulty_1_10}/10 &bull; ${usa.PR_Timeline_Years} yrs</span>
+            <span class="country-stat-val" style="color:#ef4444;">${usa.PR_Ease_1_10}/10 &bull; ${usa.PR_Timeline_Years} yrs</span>
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Global Direct Employers</span>
             <span class="country-stat-val">${usa.Global_Employers_Count}</span>
           </div>
           <div class="country-stat-row">
-            <span class="country-stat-label">Fresher Volatility</span>
-            <span class="country-stat-val" style="color:${usa.Fresher_Volatility_1_10 >= 7 ? '#ef4444' : '#10b981'}">${usa.Fresher_Volatility_1_10}/10</span>
+            <span class="country-stat-label">Fresher Stability</span>
+            <span class="country-stat-val" style="color:${usa.Fresher_Stability_1_10 <= 4 ? '#ef4444' : '#10b981'}">${usa.Fresher_Stability_1_10}/10</span>
+          </div>
+          <div class="country-stat-row">
+            <span class="country-stat-label">Layoff Recovery Ease</span>
+            <span class="country-stat-val" style="color:#38bdf8;">${usa.Layoff_Recovery_Ease_1_10}/10</span>
           </div>
         </div>
         <div class="country-verdict" style="border-left-color:#dc2626;">
@@ -1581,7 +1831,7 @@ function renderCountryCompareView() {
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Permanent Residency (PR)</span>
-            <span class="country-stat-val" style="color:#10b981;">${aus.PR_Difficulty_1_10}/10 &bull; ${aus.PR_Timeline_Years} yrs</span>
+            <span class="country-stat-val" style="color:#10b981;">${aus.PR_Ease_1_10}/10 &bull; ${aus.PR_Timeline_Years} yrs</span>
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Global Direct Employers</span>
@@ -1590,6 +1840,10 @@ function renderCountryCompareView() {
           <div class="country-stat-row">
             <span class="country-stat-label">Senior Career Stability</span>
             <span class="country-stat-val" style="color:#10b981;">${aus.Senior_Stability_1_10}/10</span>
+          </div>
+          <div class="country-stat-row">
+            <span class="country-stat-label">Layoff Recovery Ease</span>
+            <span class="country-stat-val" style="color:#38bdf8;">${aus.Layoff_Recovery_Ease_1_10}/10</span>
           </div>
         </div>
         <div class="country-verdict" style="border-left-color:#16a34a;">
@@ -1622,7 +1876,7 @@ function renderCountryCompareView() {
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Permanent Residency (PR)</span>
-            <span class="country-stat-val" style="color:#3b82f6;">${can.PR_Difficulty_1_10}/10 &bull; ${can.PR_Timeline_Years} yrs</span>
+            <span class="country-stat-val" style="color:#3b82f6;">${can.PR_Ease_1_10}/10 &bull; ${can.PR_Timeline_Years} yrs</span>
           </div>
           <div class="country-stat-row">
             <span class="country-stat-label">Global Direct Employers</span>
@@ -1631,6 +1885,10 @@ function renderCountryCompareView() {
           <div class="country-stat-row">
             <span class="country-stat-label">Remote Work Viability</span>
             <span class="country-stat-val" style="color:#3b82f6;">${can.Remote_Work_1_10}/10</span>
+          </div>
+          <div class="country-stat-row">
+            <span class="country-stat-label">Layoff Recovery Ease</span>
+            <span class="country-stat-val" style="color:#38bdf8;">${can.Layoff_Recovery_Ease_1_10}/10</span>
           </div>
         </div>
         <div class="country-verdict" style="border-left-color:#2563eb;">
@@ -1754,22 +2012,23 @@ function renderCountryCompareView() {
       { label: 'Masters Degree Required', usa: usa.Masters_Degree, aus: aus.Masters_Degree, can: can.Masters_Degree, adv: 'Universal' },
       { label: 'Masters Tuition (USD)', usa: fmt(usa.Masters_Cost_USD), aus: fmt(aus.Masters_Cost_USD), can: fmt(can.Masters_Cost_USD), adv: 'Canada (Lowest Cost)', highlightCan: true },
       { label: 'Est. 5-Yr Net Gain (Pay - Tuition)', usa: fmt(usa5YrNet), aus: fmt(aus5YrNet), can: fmt(can5YrNet), adv: 'USA (+Highest Net)', highlightUsa: true },
-      { label: 'Admission Competitiveness (1-10)', usa: `${usa.Admission_Comp_1_10}/10`, aus: `${aus.Admission_Comp_1_10}/10`, can: `${can.Admission_Comp_1_10}/10`, adv: 'AUS (Easiest Entry)', highlightAus: true },
-      { label: 'Direct Campus Hire Rate (1-10)', usa: `${usa.Direct_Hire_1_10}/10`, aus: `${aus.Direct_Hire_1_10}/10`, can: `${can.Direct_Hire_1_10}/10`, adv: 'USA (Active Pipelines)', highlightUsa: true },
+      { label: 'Acceptance Ease for Your Profile (1-10)', usa: `${usa.Acceptance_Ease_1_10}/10`, aus: `${aus.Acceptance_Ease_1_10}/10`, can: `${can.Acceptance_Ease_1_10}/10`, adv: 'AUS/CAN (Higher Acceptance)', highlightAus: true },
+      { label: 'Campus Placements Rate (1-10)', usa: `${usa.Placements_1_10}/10`, aus: `${aus.Placements_1_10}/10`, can: `${can.Placements_1_10}/10`, adv: 'USA (Active Pipelines)', highlightUsa: true },
       { label: 'Technical Interview Bar (1-10)', usa: `${usa.Interview_Comp_1_10}/10`, aus: `${aus.Interview_Comp_1_10}/10`, can: `${can.Interview_Comp_1_10}/10`, adv: 'AUS/CAN (Lower LeetCode)', highlightAus: true },
       { label: 'Fresher Starting Pay (USD)', usa: fmt(usa.Salary_Fresher_USD), aus: fmt(aus.Salary_Fresher_USD), can: fmt(can.Salary_Fresher_USD), adv: `USA (+${Math.round((usa.Salary_Fresher_USD / can.Salary_Fresher_USD - 1) * 100)}%)`, highlightUsa: true },
       { label: '5-Year Mid-Career Pay (USD)', usa: fmt(usa.Salary_5Yr_USD), aus: fmt(aus.Salary_5Yr_USD), can: fmt(can.Salary_5Yr_USD), adv: `USA (+${Math.round((usa.Salary_5Yr_USD / can.Salary_5Yr_USD - 1) * 100)}%)`, highlightUsa: true },
       { label: '10-Year Senior Benchmark (USD)', usa: fmt(usa.Salary_10Yr_USD), aus: fmt(aus.Salary_10Yr_USD), can: fmt(can.Salary_10Yr_USD), adv: `USA (+${Math.round((usa.Salary_10Yr_USD / can.Salary_10Yr_USD - 1) * 100)}%)`, highlightUsa: true },
       { label: '20-Year Veteran Pay (USD)', usa: fmt(usa.Salary_20Yr_USD), aus: fmt(aus.Salary_20Yr_USD), can: fmt(can.Salary_20Yr_USD), adv: `USA (+${Math.round((usa.Salary_20Yr_USD / can.Salary_20Yr_USD - 1) * 100)}%)`, highlightUsa: true },
       { label: 'Peak Career Ceiling (USD)', usa: fmt(usa.Salary_Max_USD), aus: fmt(aus.Salary_Max_USD), can: fmt(can.Salary_Max_USD), adv: `USA (+${Math.round((usa.Salary_Max_USD / can.Salary_Max_USD - 1) * 100)}%)`, highlightUsa: true },
-      { label: 'Permanent Residency (PR) Difficulty', usa: `${usa.PR_Difficulty_1_10}/10 (Severe)`, aus: `${aus.PR_Difficulty_1_10}/10 (Points)`, can: `${can.PR_Difficulty_1_10}/10 (Fast)`, adv: 'Canada (Easiest PR)', highlightCan: true },
+      { label: 'Permanent Residency (PR) Ease (1-10)', usa: `${usa.PR_Ease_1_10}/10 (Severe Lottery)`, aus: `${aus.PR_Ease_1_10}/10 (Points)`, can: `${can.PR_Ease_1_10}/10 (Fast)`, adv: 'Canada (Easiest PR)', highlightCan: true },
       { label: 'PR Timeline (Years)', usa: `${usa.PR_Timeline_Years} Years`, aus: `${aus.PR_Timeline_Years} Years`, can: `${can.PR_Timeline_Years} Years`, adv: 'Canada (Fastest)', highlightCan: true },
       { label: 'Global Direct Employers Count', usa: usa.Global_Employers_Count, aus: aus.Global_Employers_Count, can: can.Global_Employers_Count, adv: 'USA (Massive Scale)', highlightUsa: true },
-      { label: 'Fresher Hiring Volatility (1-10)', usa: `${usa.Fresher_Volatility_1_10}/10`, aus: `${aus.Fresher_Volatility_1_10}/10`, can: `${can.Fresher_Volatility_1_10}/10`, adv: 'AUS (Lowest Volatility)', highlightAus: true },
+      { label: 'Layoff Rehire Recovery Ease (1-10)', usa: `${usa.Layoff_Recovery_Ease_1_10}/10`, aus: `${aus.Layoff_Recovery_Ease_1_10}/10`, can: `${can.Layoff_Recovery_Ease_1_10}/10`, adv: 'USA (Deepest Rehire Market)', highlightUsa: true },
+      { label: 'Fresher Stability in Recessions (1-10)', usa: `${usa.Fresher_Stability_1_10}/10`, aus: `${aus.Fresher_Stability_1_10}/10`, can: `${can.Fresher_Stability_1_10}/10`, adv: 'AUS (Most Protected)', highlightAus: true },
       { label: 'Senior Career Stability (1-10)', usa: `${usa.Senior_Stability_1_10}/10`, aus: `${aus.Senior_Stability_1_10}/10`, can: `${can.Senior_Stability_1_10}/10`, adv: 'AUS (High Job Security)', highlightAus: true },
-      { label: '20-Yr AI Displacement Risk (%)', usa: `${usa.AI_Displacement_20Yr_Pct}%`, aus: `${aus.AI_Displacement_20Yr_Pct}%`, can: `${can.AI_Displacement_20Yr_Pct}%`, adv: 'Role-Specific', highlightUsa: false },
+      { label: '20-Yr AI Resilience (% Safe)', usa: `${usa.AI_Resilience_20Yr_Pct}% Safe`, aus: `${aus.AI_Resilience_20Yr_Pct}% Safe`, can: `${can.AI_Resilience_20Yr_Pct}% Safe`, adv: 'Role-Specific', highlightUsa: false },
       { label: 'Remote Work Viability (1-10)', usa: `${usa.Remote_Work_1_10}/10`, aus: `${aus.Remote_Work_1_10}/10`, can: `${can.Remote_Work_1_10}/10`, adv: 'US Remote / Canada', highlightCan: true },
-      { label: 'Undergrad Background Fit (1-10)', usa: `${usa.Undergrad_Fit_1_10}/10`, aus: `${aus.Undergrad_Fit_1_10}/10`, can: `${can.Undergrad_Fit_1_10}/10`, adv: 'Uniform', highlightUsa: false },
+      { label: 'Personal Profile & Skills Fit (1-10)', usa: `${usa.Personal_Profile_Fit_1_10}/10`, aus: `${aus.Personal_Profile_Fit_1_10}/10`, can: `${can.Personal_Profile_Fit_1_10}/10`, adv: 'Role-Specific', highlightUsa: false },
       { label: 'Cognitive & Mental Fit (1-10)', usa: `${usa.Cognitive_Alignment_1_10}/10`, aus: `${aus.Cognitive_Alignment_1_10}/10`, can: `${can.Cognitive_Alignment_1_10}/10`, adv: 'Uniform', highlightUsa: false },
       { label: 'Mid-Career Milestone Role', usa: usa.Mid_Career_Role, aus: aus.Mid_Career_Role, can: can.Mid_Career_Role, adv: 'Standard Ladder' },
       { label: 'Peak Executive / Endgame Role', usa: usa.Endgame_Role, aus: aus.Endgame_Role, can: can.Endgame_Role, adv: 'Standard Ladder' },
@@ -1793,14 +2052,18 @@ function renderCountryCompareView() {
 let fitCountry = 'High-Risk: USA';
 
 const FIT_CRITERIA = [
-  { key: 'salary', label: 'Salary Weight', default: 7 },
-  { key: 'stability', label: 'Stability', default: 6 },
-  { key: 'remote', label: 'Remote Work', default: 5 },
-  { key: 'aiSafe', label: 'AI Resilience', default: 6 },
-  { key: 'ugFit', label: 'Undergrad Fit', default: 5 },
-  { key: 'cognitive', label: 'Cognitive Alignment', default: 5 },
-  { key: 'employers', label: 'Market Size', default: 4 },
-  { key: 'lowCost', label: 'Low Tuition', default: 3 },
+  { key: 'profileFit', label: 'Personal Match', default: 9 },
+  { key: 'salary', label: 'Peak Compensation', default: 7 },
+  { key: 'fresherPay', label: 'Fresher Starting Pay', default: 6 },
+  { key: 'aiSafe', label: 'AI Resilience', default: 7 },
+  { key: 'prEase', label: 'PR Ease & Speed', default: 7 },
+  { key: 'seniorStab', label: 'Career Stability', default: 6 },
+  { key: 'layoffRecovery', label: 'Layoff Recovery Ease', default: 6 },
+  { key: 'fresherStab', label: 'Fresher Stability', default: 5 },
+  { key: 'placements', label: 'Campus Placements', default: 5 },
+  { key: 'accEase', label: 'Admission Acceptance Ease', default: 5 },
+  { key: 'remote', label: 'Remote Flexibility', default: 4 },
+  { key: 'lowCost', label: 'Low Degree Cost', default: 4 },
 ];
 
 function renderFitSliders() {
@@ -1827,19 +2090,23 @@ function renderFitView() {
 
   const rows = byCountry(fitCountry);
   const maxSalary = Math.max(...rows.map(d => d.Salary_Max_USD));
-  const maxEmp = Math.max(...rows.map(d => d.Global_Employers_Count));
+  const maxFresher = Math.max(...rows.map(d => d.Salary_Fresher_USD));
   const maxCost = Math.max(...rows.map(d => d.Masters_Cost_USD));
 
   const scored = rows.map(d => {
     const totalW = Object.values(weights).reduce((a, b) => a + b, 0) || 1;
     let score = 0;
+    score += (d.Personal_Profile_Fit_1_10 / 10) * weights.profileFit;
     score += (d.Salary_Max_USD / maxSalary) * weights.salary;
-    score += (d.Senior_Stability_1_10 / 10) * weights.stability;
+    score += (d.Salary_Fresher_USD / maxFresher) * weights.fresherPay;
+    score += (d.AI_Resilience_20Yr_Pct / 100) * weights.aiSafe;
+    score += (d.PR_Ease_1_10 / 10) * weights.prEase;
+    score += (d.Senior_Stability_1_10 / 10) * weights.seniorStab;
+    score += (d.Layoff_Recovery_Ease_1_10 / 10) * weights.layoffRecovery;
+    score += (d.Fresher_Stability_1_10 / 10) * weights.fresherStab;
+    score += (d.Placements_1_10 / 10) * weights.placements;
+    score += (d.Acceptance_Ease_1_10 / 10) * weights.accEase;
     score += (d.Remote_Work_1_10 / 10) * weights.remote;
-    score += ((100 - d.AI_Displacement_20Yr_Pct) / 100) * weights.aiSafe;
-    score += (d.Undergrad_Fit_1_10 / 10) * weights.ugFit;
-    score += (d.Cognitive_Alignment_1_10 / 10) * weights.cognitive;
-    score += (d.Global_Employers_Count / maxEmp) * weights.employers;
     score += ((maxCost - d.Masters_Cost_USD) / maxCost) * weights.lowCost;
     return { ...d, fitScore: Number((score / totalW * 100).toFixed(1)) };
   }).sort((a, b) => b.fitScore - a.fitScore);
@@ -1849,13 +2116,13 @@ function renderFitView() {
       <td class="mono" style="text-align:center;font-weight:600;color:#ffffff">${i + 1}</td>
       <td class="cell-role">${d.Role_Title}</td>
       <td class="mono" style="font-weight:600;"><span style="background:${d.fitScore >= 70 ? '#16a34a' : d.fitScore >= 50 ? '#2563eb' : '#d97706'};color:#ffffff;padding:2px 8px;border-radius:2px;display:inline-block">${d.fitScore}</span></td>
+      <td class="mono" style="color:#38bdf8;font-weight:700;">${d.Personal_Profile_Fit_1_10}/10</td>
       <td class="mono num-positive" style="color:#ffffff">${fmt(d.Salary_Fresher_USD)}</td>
       <td class="mono num-positive" style="color:#ffffff">${fmt(d.Salary_Max_USD)}</td>
-      <td><span class="${riskClass(d.AI_Displacement_20Yr_Pct)} mono">${d.AI_Displacement_20Yr_Pct}%</span></td>
+      <td><span class="mono" style="color:#10b981;font-weight:600;">${d.AI_Resilience_20Yr_Pct}%</span></td>
+      <td class="mono" style="color:${d.PR_Ease_1_10 >= 7 ? '#10b981' : d.PR_Ease_1_10 >= 4 ? '#f59e0b' : '#ef4444'};font-weight:600;">${d.PR_Ease_1_10}/10</td>
+      <td class="mono" style="color:#ffffff">${d.Layoff_Recovery_Ease_1_10}/10</td>
       <td class="mono" style="color:#ffffff">${d.Senior_Stability_1_10}/10</td>
-      <td class="mono" style="color:#ffffff">${d.Remote_Work_1_10}/10</td>
-      <td class="mono" style="color:#ffffff">${d.Undergrad_Fit_1_10}/10</td>
-      <td class="mono" style="color:#ffffff">${d.Cognitive_Alignment_1_10}/10</td>
     </tr>
   `).join('');
 }
@@ -1884,6 +2151,7 @@ document.querySelectorAll('#directory-filter-pills .pill-btn').forEach(btn => {
 renderOverview();
 populateSkillSelect();
 renderTable();
+setupTableTooltips();
 populateSalarySelect();
 populateCompareSelects();
 populateCountryCompareSelect();

@@ -1,0 +1,24 @@
+Personal Profile & Cognitive Archetype
+Current Status
+Education: 
+3rd year student pursuing B.Tech in IT at KJSIT (Mumbai) 
++ BS in Data Science at IIT Madras (59/142 credits)
+Leadership: 
+KJSIT Students' Council, 
+CSI tech committee (currently jt. COO, soon to be Chairperson), 
+managed logistics for cultural fests and SCORE football tournaments.
+
+Goals: 
+Permanent settlement abroad (English-speaking country), high quality of life, Tier-1 university for Master's, direct transition without a gap year.
+
+Technical Strengths: 
+Minecraft Redstone (discrete logic/state machines), 
+Blender poly-optimization, Substance Painter, Unreal Engine Blueprints. 
+Excellent at spatial/3D math and vectors. 
+Limitations/Dislikes: 
+Continuous math, Laplace transforms, Fourier transforms, abstract high-dimensional matrices (e.g., standard Machine Learning Foundations).
+The Math Diagnosis (Spatial vs. Abstract)
+The user excels at math that has a physical coordinate space (geometry, vectors, state machines). The user struggles with math that is purely abstract and continuous (matrices, complex calculus).
+Diagnostic Action Plan
+The 3Blue1Brown Test: Watch 3Blue1Brown's visual explanations of the Fourier Transform and Linear Algebra. If it "clicks" visually, the issue is academic notation. If it remains frustrating, permanently avoid DSP and pure ML roles.
+The Tech Art Test: Use ShaderToy to write math that generates real-time 3D visuals. If this is enjoyable, the Technical Art/Rendering pipeline is the optimal career path.
