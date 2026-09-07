@@ -732,6 +732,174 @@ input[type="range"]::-webkit-slider-thumb:hover {
   line-height: 1.65;
 }
 
+/* ---- Skills & Ladder Badges ---- */
+.badge-skill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  white-space: nowrap;
+}
+
+.badge-primary {
+  background: #1e3a8a;
+  color: #93c5fd;
+  border: 1px solid #2563eb;
+}
+
+.badge-secondary {
+  background: #2e1065;
+  color: #d8b4fe;
+  border: 1px solid #7c3aed;
+}
+
+.skills-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 8px 0 12px;
+}
+
+.career-ladder {
+  background: #111111;
+  border: 1px solid #262626;
+  border-radius: 3px;
+  padding: 10px 12px;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ladder-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11.5px;
+}
+
+.ladder-stage {
+  text-transform: uppercase;
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: 2px;
+  min-width: 58px;
+  text-align: center;
+}
+
+.stage-entry { background: #1e293b; color: #94a3b8; border: 1px solid #334155; }
+.stage-mid { background: #064e3b; color: #6ee7b7; border: 1px solid #059669; }
+.stage-endgame { background: #7f1d1d; color: #fca5a5; border: 1px solid #dc2626; }
+
+.ladder-name {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.table-ladder-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11px;
+}
+
+.text-subtle {
+  color: #a3a3a3;
+  font-size: 11px;
+}
+
+/* ---- Country Pathways Compare ---- */
+.country-card {
+  background: var(--surface);
+  border: 1px solid var(--border-primary);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.country-card-usa { border-top: 3px solid #dc2626; }
+.country-card-aus { border-top: 3px solid #16a34a; }
+.country-card-can { border-top: 3px solid #2563eb; }
+
+.country-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.country-card-title {
+  font-size: var(--fs-md);
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.badge-win {
+  background: #14532d;
+  color: #86efac;
+  border: 1px solid #16a34a;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  display: inline-block;
+}
+
+.badge-info {
+  background: #1e293b;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  padding: 2px 7px;
+  border-radius: 2px;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.country-stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border-secondary);
+  font-size: var(--fs-sm);
+}
+
+.country-stat-row:last-child {
+  border-bottom: none;
+}
+
+.country-stat-label {
+  color: #a3a3a3;
+  font-size: 12px;
+}
+
+.country-stat-val {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.country-verdict {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: #111111;
+  border-radius: 2px;
+  font-size: 11.5px;
+  line-height: 1.55;
+  color: #d4d4d4;
+  border-left: 2px solid var(--border-primary);
+}
+
 /* ---- Responsive ---- */
 @media (max-width: 1200px) {
   .kpi-row { grid-template-columns: 1fr 1fr; }
