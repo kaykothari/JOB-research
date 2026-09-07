@@ -1,0 +1,136 @@
+Role_Title,Country_Path,Masters_Degree,Masters_Cost_USD,Admission_Comp_1_10,Direct_Hire_1_10,Global_Employers_Count,Interview_Comp_1_10,Salary_Fresher_USD,Salary_5Yr_USD,Salary_10Yr_USD,Salary_20Yr_USD,Salary_Max_USD,Fresher_Volatility_1_10,Senior_Stability_1_10,PR_Difficulty_1_10,PR_Timeline_Years,AI_Displacement_20Yr_Pct,Remote_Work_1_10,Undergrad_Fit_1_10,Cognitive_Alignment_1_10
+Synthetic Data Env Artist,High-Risk: USA,MS CompSci (Graphics),72000,8,8,5400,8,112000,162000,224000,290000,380000,6,6,9,9.0,32,8,8,9
+Synthetic Data Env Artist,Safe: AUS/NZ,MS CompSci (Graphics),50000,6,7,1500,6,78000,110000,140000,170000,225000,4,7,4,3.5,32,7,8,9
+Synthetic Data Env Artist,Safe: CAN,MS CompSci (Graphics),42000,6,7,2100,6,70000,98000,128000,155000,200000,4,7,3,2.5,32,7,8,9
+Sim2Real Tech Director,High-Risk: USA,MS Robotics Eng,84000,9,7,1800,9,134000,195000,285000,380000,520000,5,8,8,7.5,14,4,7,8
+Sim2Real Tech Director,Safe: AUS/NZ,MS Robotics Eng,54000,7,5,450,8,92000,130000,165000,200000,250000,4,9,4,3.5,14,4,7,8
+Sim2Real Tech Director,Safe: CAN,MS Robotics Eng,46000,7,5,600,8,84000,118000,148000,185000,220000,4,9,3,2.5,14,4,7,8
+Digital Twin Architect,High-Risk: USA,MS Systems Eng,68000,7,8,8200,7,118000,172000,245000,320000,420000,5,8,9,8.5,22,6,9,9
+Digital Twin Architect,Safe: AUS/NZ,MS Systems Eng,48000,5,7,2200,6,86000,120000,155000,180000,240000,3,8,4,3.5,22,6,9,9
+Digital Twin Architect,Safe: CAN,MS Systems Eng,39000,5,7,3200,6,78000,108000,138000,165000,210000,3,8,3,2.5,22,6,9,9
+Virtual Prod Tech Artist,High-Risk: USA,MS Tech Art (VFX),88000,8,6,2400,8,96000,148000,212000,280000,340000,8,6,9,8.5,26,3,7,10
+Virtual Prod Tech Artist,Safe: AUS/NZ,MS Tech Art (VFX),52000,6,6,600,7,72000,104000,138000,165000,210000,7,6,4,3.5,26,3,7,10
+Virtual Prod Tech Artist,Safe: CAN,MS Tech Art (VFX),44000,6,6,850,7,64000,92000,120000,145000,185000,7,6,3,2.5,26,3,7,10
+Spatial Computing Strategist,High-Risk: USA,MS HCI / Spatial Tech,74000,7,6,1600,7,122000,178000,255000,340000,440000,7,6,9,9.0,34,7,8,7
+Spatial Computing Strategist,Safe: AUS/NZ,MS HCI / Spatial Tech,48000,5,5,300,6,88000,132000,165000,195000,240000,6,6,4,3.5,34,7,8,7
+Spatial Computing Strategist,Safe: CAN,MS HCI / Spatial Tech,42000,5,5,400,6,82000,120000,148000,175000,215000,6,6,3,2.5,34,7,8,7
+Rendering Pipeline Eng,High-Risk: USA,MS CompSci (Systems),70000,8,9,4200,9,142000,212000,305000,410000,560000,4,9,9,8.0,16,6,8,9
+Rendering Pipeline Eng,Safe: AUS/NZ,MS CompSci (Systems),46000,7,8,1100,8,95000,138000,178000,215000,285000,3,9,4,3.5,16,6,8,9
+Rendering Pipeline Eng,Safe: CAN,MS CompSci (Systems),38000,7,8,1500,8,88000,126000,158000,195000,255000,3,9,3,2.5,16,6,8,9
+Interactive Systems Des,High-Risk: USA,MS Interactive Media,78000,7,7,6200,7,104000,152000,198000,260000,340000,7,6,9,9.0,38,8,8,10
+Interactive Systems Des,Safe: AUS/NZ,MS Interactive Media,48000,5,7,1800,6,76000,108000,135000,160000,200000,6,6,4,3.5,38,8,8,10
+Interactive Systems Des,Safe: CAN,MS Interactive Media,40000,5,7,2400,6,70000,98000,120000,145000,180000,6,6,3,2.5,38,8,8,10
+Industrial Sim Architect (Ports/Factories),High-Risk: USA,MS Industrial Eng / Robotics,65000,7,8,4500,7,105000,150000,210000,280000,350000,4,9,9,8.5,18,4,8,9
+Industrial Sim Architect (Ports/Factories),Safe: AUS/NZ,MS Industrial / Systems Eng,55000,6,7,1200,6,82000,115000,145000,175000,210000,3,9,5,3.5,18,3,8,9
+Industrial Sim Architect (Ports/Factories),Safe: CAN,MS Industrial / Systems Eng,38000,6,6,1500,6,75000,105000,135000,160000,195000,4,8,3,2.5,18,3,8,9
+Logistics & Ops Researcher (Supply Chain),High-Risk: USA,MS Operations Research,68000,8,7,8000,8,110000,155000,225000,310000,420000,5,8,9,8.5,28,6,7,6
+Logistics & Ops Researcher (Supply Chain),Safe: AUS/NZ,MS Operations Research,56000,6,6,1800,7,85000,120000,155000,190000,240000,4,8,5,3.5,28,5,7,6
+Logistics & Ops Researcher (Supply Chain),Safe: CAN,MS Operations Research,40000,6,6,2200,7,78000,110000,140000,175000,220000,5,7,3,2.5,28,5,7,6
+Transport Network Planner (Aviation/Transit),High-Risk: USA,MS Transportation Systems,62000,7,7,2500,6,95000,135000,180000,240000,310000,3,9,9,8.5,25,4,7,7
+Transport Network Planner (Aviation/Transit),Safe: AUS/NZ,MS Transportation Systems,52000,5,6,800,5,78000,108000,135000,165000,195000,2,9,4,3.5,25,3,7,7
+Transport Network Planner (Aviation/Transit),Safe: CAN,MS Transportation Systems,36000,5,6,1000,5,72000,98000,125000,155000,180000,3,9,3,2.5,25,3,7,7
+Infrastructure Capacity & Grid Modeler,High-Risk: USA,MS Energy Systems/Data Sci,64000,7,8,3500,8,105000,145000,195000,260000,340000,2,10,9,8.5,20,5,8,4
+Infrastructure Capacity & Grid Modeler,Safe: AUS/NZ,MS Energy Systems/Data Sci,54000,6,7,1100,7,85000,118000,148000,185000,230000,2,10,4,3.5,20,4,8,4
+Infrastructure Capacity & Grid Modeler,Safe: CAN,MS Energy Systems/Data Sci,38000,6,7,1400,7,76000,108000,138000,168000,210000,2,10,3,2.5,20,4,8,4
+Healthcare Flow & Systems Architect,High-Risk: USA,MS Health Informatics,60000,6,7,4000,6,95000,130000,175000,230000,290000,3,9,9,8.5,22,5,7,8
+Healthcare Flow & Systems Architect,Safe: AUS/NZ,MS Health Informatics,50000,5,6,1200,5,80000,110000,140000,170000,210000,2,9,4,3.5,22,4,7,8
+Healthcare Flow & Systems Architect,Safe: CAN,MS Health Informatics,35000,5,6,1600,5,72000,102000,130000,155000,190000,3,9,3,2.5,22,4,7,8
+Data Center Topology Architect,High-Risk: USA,MS CompSci / Network Eng,62000,7,8,6500,7,115000,165000,220000,290000,380000,3,9,9,8.5,15,4,8,9
+Data Center Topology Architect,Safe: AUS/NZ,MS CompSci / Network Eng,48000,6,7,1800,6,88000,125000,160000,195000,240000,3,9,4,3.5,15,4,8,9
+Data Center Topology Architect,Safe: CAN,MS CompSci / Network Eng,35000,6,7,2400,6,80000,115000,145000,175000,215000,3,9,3,2.5,15,4,8,9
+Cloud Infrastructure Strategist,High-Risk: USA,MS Distributed Systems,65000,8,9,18000,8,125000,185000,260000,350000,500000,4,8,9,8.5,25,9,9,8
+Cloud Infrastructure Strategist,Safe: AUS/NZ,MS Distributed Systems,52000,6,8,4500,7,95000,140000,180000,230000,280000,4,8,4,3.5,25,8,9,8
+Cloud Infrastructure Strategist,Safe: CAN,MS Distributed Systems,38000,6,8,5500,7,85000,125000,160000,210000,250000,4,8,3,2.5,25,8,9,8
+High-Frequency Execution Architect,High-Risk: USA,MS Comp Eng / Low-Level Sys,85000,9,6,800,10,180000,280000,450000,700000,1500000,6,7,9,8.5,12,3,7,6
+High-Frequency Execution Architect,Safe: AUS/NZ,MS Comp Eng / Low-Level Sys,55000,8,5,150,9,110000,180000,250000,350000,500000,6,7,5,4.0,12,2,7,6
+High-Frequency Execution Architect,Safe: CAN,MS Comp Eng / Low-Level Sys,42000,8,5,200,9,95000,150000,210000,300000,450000,6,7,3,2.5,12,2,7,6
+Network Fault Tolerance Eng,High-Risk: USA,MS Network / Reliability Eng,60000,7,8,8500,8,118000,170000,235000,310000,420000,4,9,9,8.5,18,8,9,10
+Network Fault Tolerance Eng,Safe: AUS/NZ,MS Network / Reliability Eng,48000,6,7,2200,7,90000,130000,165000,210000,260000,3,9,4,3.5,18,7,9,10
+Network Fault Tolerance Eng,Safe: CAN,MS Network / Reliability Eng,34000,6,7,3100,7,82000,118000,150000,185000,230000,4,9,3,2.5,18,7,9,10
+Edge Computing Strategist,High-Risk: USA,MS IoT / Distributed Computing,68000,7,7,4200,7,120000,175000,240000,320000,430000,5,8,9,8.5,22,6,8,8
+Edge Computing Strategist,Safe: AUS/NZ,MS IoT / Distributed Computing,50000,6,6,900,6,92000,132000,170000,215000,270000,4,8,5,3.5,22,5,8,8
+Edge Computing Strategist,Safe: CAN,MS IoT / Distributed Computing,36000,6,6,1200,6,84000,120000,155000,195000,240000,4,8,3,2.5,22,5,8,8
+Systematic Quantitative Researcher,High-Risk: USA,MS Financial Eng (MFE) / Math,85000,10,6,2500,10,180000,350000,600000,1000000,3000000,7,5,9,8.5,45,4,4,2
+Systematic Quantitative Researcher,Safe: AUS/NZ,MS Financial Eng / Math,60000,8,5,400,9,110000,180000,280000,450000,800000,7,5,5,4.0,45,4,4,2
+Systematic Quantitative Researcher,Safe: CAN,MS Financial Eng / Math,45000,8,5,500,9,95000,160000,240000,380000,600000,7,5,3,2.5,45,4,4,2
+Quant Risk & Portfolio Analyst,High-Risk: USA,MS Fin Math / Data Sci,70000,8,7,5000,8,120000,180000,260000,350000,500000,5,7,9,8.5,55,5,6,3
+Quant Risk & Portfolio Analyst,Safe: AUS/NZ,MS Fin Math / Data Sci,52000,7,6,1200,7,90000,135000,185000,240000,320000,5,7,4,3.5,55,5,6,3
+Quant Risk & Portfolio Analyst,Safe: CAN,MS Fin Math / Data Sci,38000,7,6,1500,7,82000,120000,165000,210000,280000,5,7,3,2.5,55,5,6,3
+Market Microstructure Analyst,High-Risk: USA,MS Fin Eng / CompSci,75000,9,6,1500,9,140000,220000,350000,500000,800000,6,7,9,8.5,40,3,7,5
+Market Microstructure Analyst,Safe: AUS/NZ,MS Fin Eng / CompSci,55000,7,5,300,8,95000,150000,220000,310000,450000,6,7,4,3.5,40,3,7,5
+Market Microstructure Analyst,Safe: CAN,MS Fin Eng / CompSci,42000,7,5,400,8,88000,135000,190000,270000,380000,6,7,3,2.5,40,3,7,5
+Derivatives & Commodities Quant Trader,High-Risk: USA,MS Applied Math / MFE,85000,9,5,2000,10,160000,300000,500000,800000,2500000,8,4,9,8.5,60,2,3,1
+Derivatives & Commodities Quant Trader,Safe: AUS/NZ,MS Applied Math / MFE,60000,8,5,350,9,105000,170000,260000,400000,700000,8,4,5,4.0,60,2,3,1
+Derivatives & Commodities Quant Trader,Safe: CAN,MS Applied Math / MFE,45000,8,5,450,9,92000,155000,220000,340000,550000,8,4,3,2.5,60,2,3,1
+Quantitative Developer (Infrastructure),High-Risk: USA,MS CompSci (Systems),70000,8,8,6000,9,150000,240000,350000,480000,750000,4,8,9,8.5,20,4,8,7
+Quantitative Developer (Infrastructure),Safe: AUS/NZ,MS CompSci (Systems),50000,7,7,1200,8,105000,165000,220000,290000,400000,4,8,4,3.5,20,4,8,7
+Quantitative Developer (Infrastructure),Safe: CAN,MS CompSci (Systems),38000,7,7,1600,8,95000,145000,195000,250000,350000,4,8,3,2.5,20,4,8,7
+Cryptoeconomic Mechanism Designer,High-Risk: USA,MS CompSci / Game Theory,65000,7,7,1500,8,130000,190000,280000,400000,800000,8,5,9,8.5,25,9,7,8
+Cryptoeconomic Mechanism Designer,Safe: AUS/NZ,MS CompSci / Game Theory,48000,6,6,200,7,95000,140000,190000,260000,450000,8,5,5,4.0,25,9,7,8
+Cryptoeconomic Mechanism Designer,Safe: CAN,MS CompSci / Game Theory,36000,6,6,350,7,88000,125000,175000,240000,380000,8,5,3,2.5,25,9,7,8
+Fleet Robotics Traffic Controller,High-Risk: USA,MS Robotics / Automation,72000,8,8,2200,7,115000,160000,220000,290000,380000,3,9,9,8.5,18,3,8,9
+Fleet Robotics Traffic Controller,Safe: AUS/NZ,MS Robotics / Automation,54000,6,7,600,6,88000,125000,165000,210000,260000,2,9,4,3.5,18,3,8,9
+Fleet Robotics Traffic Controller,Safe: CAN,MS Robotics / Automation,40000,6,7,850,6,82000,118000,150000,190000,230000,2,9,3,2.5,18,3,8,9
+Warehouse Automation Logic Designer,High-Risk: USA,MS Systems Eng / Robotics,65000,7,8,3800,7,105000,150000,200000,260000,330000,3,9,9,8.5,20,4,8,10
+Warehouse Automation Logic Designer,Safe: AUS/NZ,MS Systems Eng / Robotics,50000,6,7,1000,6,82000,115000,145000,185000,230000,2,9,4,3.5,20,3,8,10
+Warehouse Automation Logic Designer,Safe: CAN,MS Systems Eng / Robotics,38000,6,7,1400,6,76000,108000,135000,170000,210000,2,9,3,2.5,20,3,8,10
+Last-Mile Logistics Routing Eng,High-Risk: USA,MS Operations Research / CompSci,68000,8,7,5500,8,118000,165000,230000,310000,420000,5,8,9,8.5,35,6,8,8
+Last-Mile Logistics Routing Eng,Safe: AUS/NZ,MS Operations Research / CompSci,52000,6,6,1200,7,90000,125000,165000,215000,280000,4,8,4,3.5,35,5,8,8
+Last-Mile Logistics Routing Eng,Safe: CAN,MS Operations Research / CompSci,39000,6,6,1600,7,82000,115000,150000,195000,250000,4,8,3,2.5,35,5,8,8
+Automation Integration Specialist,High-Risk: USA,MS Mechatronics / Automation,62000,6,8,8500,6,98000,140000,190000,250000,310000,2,9,9,8.5,22,2,7,9
+Automation Integration Specialist,Safe: AUS/NZ,MS Mechatronics / Automation,48000,5,7,2400,5,78000,108000,140000,180000,220000,2,9,4,3.5,22,2,7,9
+Automation Integration Specialist,Safe: CAN,MS Mechatronics / Automation,36000,5,7,3100,5,72000,100000,130000,165000,200000,2,9,3,2.5,22,2,7,9
+Smart City Infrastructure Planner,High-Risk: USA,MS Urban Tech / Systems,64000,7,6,2000,6,95000,135000,185000,240000,310000,4,8,9,8.5,28,5,7,7
+Smart City Infrastructure Planner,Safe: AUS/NZ,MS Urban Tech / Systems,50000,5,6,600,5,78000,108000,140000,180000,225000,3,8,4,3.5,28,4,7,7
+Smart City Infrastructure Planner,Safe: CAN,MS Urban Tech / Systems,38000,5,6,800,5,72000,98000,130000,165000,205000,3,8,3,2.5,28,4,7,7
+Business Operations (BizOps) Manager,High-Risk: USA,MBA / MS Management Tech,95000,9,5,15000,8,125000,180000,260000,350000,550000,6,7,9,8.5,45,7,5,4
+Business Operations (BizOps) Manager,Safe: AUS/NZ,MBA / MS Management Tech,65000,7,5,3500,7,95000,135000,185000,240000,340000,5,7,5,4.0,45,6,5,4
+Business Operations (BizOps) Manager,Safe: CAN,MBA / MS Management Tech,48000,7,5,4500,7,88000,125000,170000,215000,300000,5,7,3,2.5,45,6,5,4
+Corporate Strategy & M&A Analyst,High-Risk: USA,MBA (Finance/Strategy),110000,10,4,8000,9,145000,220000,340000,500000,900000,7,6,9,8.5,50,6,4,3
+Corporate Strategy & M&A Analyst,Safe: AUS/NZ,MBA (Finance/Strategy),75000,8,4,1500,8,105000,160000,230000,320000,500000,6,6,5,4.0,50,5,4,3
+Corporate Strategy & M&A Analyst,Safe: CAN,MBA (Finance/Strategy),55000,8,4,2100,8,95000,145000,205000,280000,420000,6,6,3,2.5,50,5,4,3
+Technology Strategy Consultant,High-Risk: USA,MBA / MS Tech Management,90000,8,7,25000,8,135000,195000,290000,450000,750000,6,6,9,8.5,40,7,5,5
+Technology Strategy Consultant,Safe: AUS/NZ,MBA / MS Tech Management,60000,7,6,6000,7,98000,145000,205000,310000,480000,5,6,5,4.0,40,6,5,5
+Technology Strategy Consultant,Safe: CAN,MBA / MS Tech Management,45000,7,6,7500,7,90000,135000,185000,270000,410000,5,6,3,2.5,40,6,5,5
+Pricing & Revenue Strategist,High-Risk: USA,MS Econ / Applied Analytics,68000,7,6,9500,7,110000,160000,230000,310000,450000,5,8,9,8.5,55,8,6,6
+Pricing & Revenue Strategist,Safe: AUS/NZ,MS Econ / Applied Analytics,52000,6,5,2200,6,85000,120000,165000,215000,300000,4,8,4,3.5,55,7,6,6
+Pricing & Revenue Strategist,Safe: CAN,MS Econ / Applied Analytics,38000,6,5,2800,6,78000,110000,150000,195000,260000,4,8,3,2.5,55,7,6,6
+Technical Program Manager (TPM),High-Risk: USA,MS Eng Management / CompSci,72000,8,8,22000,8,135000,190000,270000,360000,550000,4,9,9,8.5,30,8,9,8
+Technical Program Manager (TPM),Safe: AUS/NZ,MS Eng Management / CompSci,54000,6,7,5000,7,105000,145000,195000,250000,360000,3,9,4,3.5,30,7,9,8
+Technical Program Manager (TPM),Safe: CAN,MS Eng Management / CompSci,40000,6,7,6500,7,95000,130000,175000,220000,310000,3,9,3,2.5,30,7,9,8
+Developer Relations (DevRel) Eng,High-Risk: USA,MS CompSci / HCI,68000,7,7,4500,7,125000,175000,240000,320000,450000,6,7,9,8.5,45,9,8,7
+Developer Relations (DevRel) Eng,Safe: AUS/NZ,MS CompSci / HCI,50000,6,6,800,6,92000,130000,175000,225000,300000,5,7,4,3.5,45,8,8,7
+Developer Relations (DevRel) Eng,Safe: CAN,MS CompSci / HCI,38000,6,6,1100,6,84000,118000,155000,195000,260000,5,7,3,2.5,45,8,8,7
+Frontier Tech VC Analyst,High-Risk: USA,MBA / MS Innovation Tech,105000,10,3,1200,9,130000,210000,350000,600000,2000000,8,5,9,8.5,30,7,4,5
+Frontier Tech VC Analyst,Safe: AUS/NZ,MBA / MS Innovation Tech,72000,8,3,250,8,95000,150000,240000,400000,1000000,7,5,5,4.0,30,6,4,5
+Frontier Tech VC Analyst,Safe: CAN,MBA / MS Innovation Tech,52000,8,3,350,8,88000,135000,210000,340000,800000,7,5,3,2.5,30,6,4,5
+E-Sports Analytics Director,High-Risk: USA,MS Data Science / Sports Mgt,65000,7,4,400,7,95000,145000,210000,280000,400000,8,6,9,8.5,50,8,7,6
+E-Sports Analytics Director,Safe: AUS/NZ,MS Data Science / Sports Mgt,48000,6,3,80,6,75000,110000,155000,205000,280000,7,6,5,4.0,50,7,7,6
+E-Sports Analytics Director,Safe: CAN,MS Data Science / Sports Mgt,36000,6,3,120,6,68000,100000,140000,185000,245000,7,6,3,2.5,50,7,7,6
+Backend Software Engineer,High-Risk: USA,MS Computer Science,68000,7,9,150000,7,125000,180000,250000,330000,450000,4,9,9,8.5,35,9,10,8
+Backend Software Engineer,Safe: AUS/NZ,MS Computer Science,48000,6,8,35000,6,92000,135000,180000,230000,310000,3,9,4,3.5,35,8,10,8
+Backend Software Engineer,Safe: CAN,MS Computer Science,36000,6,8,48000,6,85000,120000,160000,205000,270000,3,9,3,2.5,35,8,10,8
+Frontend / Web UI Engineer,High-Risk: USA,MS Computer Science / HCI,65000,6,8,130000,6,115000,165000,225000,290000,380000,5,8,9,8.5,65,9,9,7
+Frontend / Web UI Engineer,Safe: AUS/NZ,MS Computer Science / HCI,46000,5,7,30000,5,85000,122000,165000,210000,270000,4,8,4,3.5,65,8,9,7
+Frontend / Web UI Engineer,Safe: CAN,MS Computer Science / HCI,34000,5,7,42000,5,78000,110000,145000,185000,235000,4,8,3,2.5,65,8,9,7
+Full-Stack Software Engineer,High-Risk: USA,MS Computer Science,68000,7,9,180000,7,122000,175000,245000,325000,440000,4,9,9,8.5,50,9,10,8
+Full-Stack Software Engineer,Safe: AUS/NZ,MS Computer Science,48000,6,8,42000,6,90000,130000,178000,225000,300000,3,9,4,3.5,50,8,10,8
+Full-Stack Software Engineer,Safe: CAN,MS Computer Science,36000,6,8,55000,6,82000,118000,158000,200000,265000,3,9,3,2.5,50,8,10,8
+DevOps & SRE Engineer,High-Risk: USA,MS CompSci / Cloud Comp,66000,7,9,85000,7,130000,185000,260000,345000,480000,3,9,9,8.5,30,9,10,9
+DevOps & SRE Engineer,Safe: AUS/NZ,MS CompSci / Cloud Comp,48000,6,8,20000,6,95000,138000,188000,245000,330000,2,9,4,3.5,30,8,10,9
+DevOps & SRE Engineer,Safe: CAN,MS CompSci / Cloud Comp,35000,6,8,28000,6,88000,125000,165000,215000,285000,2,9,3,2.5,30,8,10,9
+Data Platform / ETL Engineer,High-Risk: USA,MS Data Science / CompSci,65000,7,9,110000,7,125000,175000,240000,320000,430000,3,9,9,8.5,45,9,10,8
+Data Platform / ETL Engineer,Safe: AUS/NZ,MS Data Science / CompSci,47000,6,8,25000,6,92000,132000,175000,230000,300000,2,9,4,3.5,45,8,10,8
+Data Platform / ETL Engineer,Safe: CAN,MS Data Science / CompSci,35000,6,8,34000,6,84000,120000,155000,200000,260000,2,9,3,2.5,45,8,10,8
+Mobile Applications Engineer,High-Risk: USA,MS Computer Science,65000,6,8,75000,7,120000,170000,235000,300000,400000,4,8,9,8.5,55,9,9,7
+Mobile Applications Engineer,Safe: AUS/NZ,MS Computer Science,46000,5,7,16000,6,88000,126000,168000,215000,285000,3,8,4,3.5,55,8,9,7
+Mobile Applications Engineer,Safe: CAN,MS Computer Science,34000,5,7,22000,6,80000,114000,150000,190000,245000,3,8,3,2.5,55,8,9,7
+Embedded Systems & Firmware,High-Risk: USA,MS Electrical & Comp Eng,68000,7,8,45000,8,118000,165000,230000,310000,420000,3,9,9,8.5,15,4,7,9
+Embedded Systems & Firmware,Safe: AUS/NZ,MS Electrical & Comp Eng,50000,6,7,9000,7,88000,125000,168000,225000,300000,2,9,4,3.5,15,3,7,9
+Embedded Systems & Firmware,Safe: CAN,MS Electrical & Comp Eng,38000,6,7,12000,7,80000,114000,150000,195000,260000,2,9,3,2.5,15,3,7,9
+Machine Learning / Applied AI,High-Risk: USA,MS Artif Intelligence / CS,75000,9,8,85000,9,145000,220000,320000,440000,650000,5,8,9,8.5,25,8,9,3
+Machine Learning / Applied AI,Safe: AUS/NZ,MS Artif Intelligence / CS,54000,8,7,18000,8,105000,158000,230000,310000,450000,4,8,4,3.5,25,7,9,3
+Machine Learning / Applied AI,Safe: CAN,MS Artif Intelligence / CS,42000,8,7,25000,8,96000,142000,205000,270000,380000,4,8,3,2.5,25,7,9,3
+Systems & Low-Level C++ Eng,High-Risk: USA,MS CompSci (Systems),70000,8,8,32000,9,135000,195000,275000,370000,520000,3,9,9,8.5,20,7,8,9
+Systems & Low-Level C++ Eng,Safe: AUS/NZ,MS CompSci (Systems),50000,7,7,6500,8,98000,142000,198000,265000,360000,2,9,4,3.5,20,6,8,9
+Systems & Low-Level C++ Eng,Safe: CAN,MS CompSci (Systems),38000,7,7,9000,8,90000,130000,175000,230000,310000,2,9,3,2.5,20,6,8,9
